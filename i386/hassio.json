@@ -1,0 +1,4 @@
+{
+    "arch": ["i386"],
+    "image": "hassioaddons/base-i386"
+}

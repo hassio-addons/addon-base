@@ -1,0 +1,4 @@
+{
+    "arch": ["aarch64"],
+    "image": "hassioaddons/base-aarch64"
+}

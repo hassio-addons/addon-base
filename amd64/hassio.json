@@ -1,0 +1,4 @@
+{
+    "arch": ["amd64"],
+    "image": "hassioaddons/base-amd64"
+}

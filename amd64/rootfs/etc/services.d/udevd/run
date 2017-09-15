@@ -1,0 +1,7 @@
+#!/usr/bin/execlineb -P
+with-contenv
+background -d {
+    s6-sleep 3
+    udevadm trigger
+}
+udevd
