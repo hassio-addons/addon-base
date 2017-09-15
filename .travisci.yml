@@ -1,0 +1,12 @@
+---
+language: bash
+services: docker
+
+env:
+  - ARCH=aarch64
+  - ARCH=amd64
+  - ARCH=armhf
+  - ARCH=i386
+
+script:
+  - travis_retry docker run --privileged -v "$(pwd)":/docker hassioaddons/build-env:latest -t ${ARCH} --git --all
