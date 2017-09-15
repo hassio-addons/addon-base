@@ -9,4 +9,5 @@ env:
   - ARCH=i386
 
 script:
+  - docker run --privileged multiarch/qemu-user-static:register --reset
   - travis_retry docker run --privileged -v "$(pwd)":/docker hassioaddons/build-env:latest -t ${ARCH} --git --all
