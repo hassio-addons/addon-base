@@ -139,8 +139,8 @@ SOFTWARE.
 [project-stage-shield]: https://img.shields.io/badge/Project%20Stage-Experimental-yellow.svg
 [repository]: https://github.com/hassio-addons/repository
 [frenck]: https://github.com/frenck
-[contributors]: https://github.com/hassio-addons/build-env/graphs/contributors
-[issue]: https://github.com/hassio-addons/build-env/issues
+[contributors]: https://github.com/hassio-addons/addon-base/graphs/contributors
+[issue]: https://github.com/hassio-addons/addon-base/issues
 [discord]: https://discord.gg/c5DvZ4e
 [forums]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [reddit]: https://reddit.com/r/homeassistant
