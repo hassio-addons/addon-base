@@ -4,9 +4,6 @@ defaults: &defaults
       image: circleci/classic:edge
     steps:
       - run:
-          name: Install dependencies
-          command: apk update && apk upgrade && apk add --nocache curl
-      - run:
           name: Check docker is running
           command: docker info
       - run:
