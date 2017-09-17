@@ -6,8 +6,6 @@ defaults: &defaults
       - run:
           name: Install dependencies
           command: apk update && apk upgrade && apk add --nocache curl
-      - setup_remote_docker:
-          reusable: true
       - run:
           name: Check docker is running
           command: docker info
