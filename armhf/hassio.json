@@ -1,4 +1,0 @@
-{
-    "arch": ["armhf"],
-    "image": "hassioaddons/base-armhf"
-}
