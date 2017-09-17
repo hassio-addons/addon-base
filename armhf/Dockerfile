@@ -10,8 +10,8 @@ ENV \
     PS1="$(whoami)@$(hostname):$(pwd)$ " \
     TERM="xterm"
 
-# Entrypoint & CMD
-ENTRYPOINT [ "/init" ]
+# Copy root filesystem
+COPY rootfs /
 
 # Install base system
 RUN \
@@ -41,8 +41,8 @@ RUN \
     && rm -f -r \
         /tmp/*
 
-# Copy root filesystem
-COPY rootfs /
+# Entrypoint & CMD
+ENTRYPOINT [ "/init" ]
 
 # Build arugments
 ARG BUILD_DATE
