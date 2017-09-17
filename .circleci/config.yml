@@ -17,7 +17,7 @@ defaults: &defaults
             fi
       - checkout
       - deploy:
-          name: Build the environment
+          name: Build and (maybe) deploy for ${ARCH}
           command: |
               if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
                 docker run \
@@ -30,7 +30,6 @@ defaults: &defaults
                   --target ${ARCH} \
                   --${ARCH}
                   --push
-                  curl -X POST ${MICROBADGER_WEBHOOK}
               else
                 docker run \
                   --privileged \
@@ -42,6 +41,9 @@ defaults: &defaults
                   --target ${ARCH} \
                   --${ARCH}
               fi
+      - deploy:
+          name: Send notification to Microbadger
+          command: curl -X POST ${MICROBADGER_WEBHOOK}
 
 jobs:
   aarch64:
