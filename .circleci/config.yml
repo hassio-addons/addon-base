@@ -1,7 +1,8 @@
 version: 2
 defaults: &defaults
+    machine: true
     docker:
-      - image: library/docker:17.07.0-ce
+      - image: circleci/classic:edge
     steps:
       - run:
           name: Install dependencies
