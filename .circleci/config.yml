@@ -28,7 +28,7 @@ defaults: &defaults
                 docker run \
                   --privileged \
                   -v ~/.docker:/root/.docker \
-                  -v "$(pwd)":/docker \
+                  -v "$CIRCLE_WORKING_DIRECTORY":/docker \
                   hassioaddons/build-env:latest \
                   --git \
                   --image "hassioaddons/base-{arch}" \
@@ -40,7 +40,7 @@ defaults: &defaults
                 docker run \
                   --privileged \
                   -v ~/.docker:/root/.docker \
-                  -v "$(pwd)":/docker \
+                  -v "$CIRCLE_WORKING_DIRECTORY":/docker \
                   hassioaddons/build-env:latest \
                   --git \
                   --image "hassioaddons/base-{arch}" \
