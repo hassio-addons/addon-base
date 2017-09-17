@@ -1,0 +1,12 @@
+---
+engines:
+  fixme:
+    enabled: true
+  shellcheck:
+    enabled: true
+  markdownlint:
+    enabled: true
+ratings:
+  paths:
+  - "**.sh"
+exclude_paths: []

@@ -44,9 +44,9 @@ repository contain some extra's:
 
 ## Changelog
 
-This repository keeps a [change log](CHANGELOG.md) and adhere to 
-[Semantic Versioning][semver].
-The format of the log is based on [Keep a Changelog][keepchangelog] 
+This repository keeps a [change log](CHANGELOG.md) and adhere to
+[Semantic Versioning][semver]. The format of the log is based on
+[Keep a Changelog][keepchangelog].
 
 ## Support
 
@@ -54,9 +54,9 @@ Got questions?
 
 You have several options to get them answered:
 
-- The Home Assistant [Community Forums][forums], we have a 
+- The Home Assistant [Community Forums][forums], we have a
   [dedicated topic][forums] on that forum regarding this repository.
-- The Home Assistant [Discord Chat Server][discord] for general Home Assistant 
+- The Home Assistant [Discord Chat Server][discord] for general Home Assistant
   discussions and questions.
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
@@ -78,7 +78,7 @@ The original setup of this repository is by [Franck Nijhof][frenck].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## Looking for Hass.io add-ons?
+## We've got some Hass.io add-ons for you
 
 Want some more functionality to your Hass.io Home Assistant instance?
 
