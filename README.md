@@ -5,6 +5,9 @@
 ![Awesome][awesome-shield]
 [![License][license-shield]](LICENSE.md)
 
+[![Code Climate][codeclimate-shield]][codeclimate]
+[![CircleCI][circleci-shield]][circleci]
+
 Docker base images used by Community Hass.io add-ons.
 
 ## Docker status
@@ -128,23 +131,27 @@ SOFTWARE.
 [armhf-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/base-armhf.svg
 [armhf-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/base-armhf.svg
 [awesome-shield]: https://img.shields.io/badge/awesome%3F-yes-brightgreen.svg
+[circleci-shield]: https://img.shields.io/circleci/project/github/hassio-addons/addon-base.svg
+[circleci]: https://circleci.com/gh/hassio-addons/addon-base
+[codeclimate-shield]: https://img.shields.io/codeclimate/github/hassio-addons/addon-base.svg
+[codeclimate]: https://codeclimate.com/github/hassio-addons/addon-base
+[contributors]: https://github.com/hassio-addons/addon-base/graphs/contributors
+[discord]: https://discord.gg/c5DvZ4e
+[forums]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
+[frenck]: https://github.com/frenck
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/base-i386
 [i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/base-i386.svg
 [i386-microbadger]: https://microbadger.com/images/hassioaddons/base-i386
 [i386-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/base-i386.svg
 [i386-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/base-i386.svg
+[issue]: https://github.com/hassio-addons/addon-base/issues
+[keepchangelog]: http://keepachangelog.com/en/1.0.0/
+[label-schema]: http://label-schema.org/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-base.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2017.svg
 [project-stage-shield]: https://img.shields.io/badge/Project%20Stage-Experimental-yellow.svg
-[repository]: https://github.com/hassio-addons/repository
-[frenck]: https://github.com/frenck
-[contributors]: https://github.com/hassio-addons/addon-base/graphs/contributors
-[issue]: https://github.com/hassio-addons/addon-base/issues
-[discord]: https://discord.gg/c5DvZ4e
-[forums]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [reddit]: https://reddit.com/r/homeassistant
-[semver]: http://semver.org/spec/v2.0.0.html
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
+[repository]: https://github.com/hassio-addons/repository
 [s6]: http://skarnet.org/software/s6/overview.html
-[label-schema]: http://label-schema.org/
+[semver]: http://semver.org/spec/v2.0.0.html
