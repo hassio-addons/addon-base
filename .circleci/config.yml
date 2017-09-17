@@ -28,7 +28,7 @@ defaults: &defaults
                   --git \
                   --image "hassioaddons/base-{arch}" \
                   --target ${ARCH} \
-                  --${ARCH}
+                  --${ARCH} \
                   --push
               else
                 docker run \
