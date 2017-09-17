@@ -1,0 +1,80 @@
+version: 2
+defaults: &defaults
+    docker:
+      - image: library/docker:17.07.0-ce
+    steps:
+      - run:
+          name: Install dependencies
+          command: apk update && apk upgrade && apk add --nocache curl
+      - setup_remote_docker:
+          reusable: true
+      - run:
+          name: Check docker is running
+          command: docker info
+      - run:
+          name: Pull Community Hass.io Add-ons build environment
+          command: docker pull hassioaddons/build-env:latest
+      - run:
+          name: Log in to Docker Hub
+          command: |
+            if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+              docker login -u ${DOCKER_LOGIN} -p ${DOCKER_PASSWORD}
+            fi
+      - checkout
+      - deploy:
+          name: Build the environment
+          command: |
+              if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+                docker run \
+                  --privileged \
+                  -v ~/.docker:/root/.docker \
+                  -v "$(pwd)":/docker \
+                  hassioaddons/build-env:latest \
+                  --git \
+                  --image "hassioaddons/base-{arch}" \
+                  --target ${ARCH} \
+                  --${ARCH}
+                  --push
+                  curl -X POST ${MICROBADGER_WEBHOOK}
+              else
+                docker run \
+                  --privileged \
+                  -v ~/.docker:/root/.docker \
+                  -v "$(pwd)":/docker \
+                  hassioaddons/build-env:latest \
+                  --git \
+                  --image "hassioaddons/base-{arch}" \
+                  --target ${ARCH} \
+                  --${ARCH}
+              fi
+
+jobs:
+  aarch64:
+    <<: *defaults
+    environment:
+      ARCH: aarch64
+      MICROBADGER_WEBHOOK: ${MICROBADGER_WEBHOOK_AARCH64}
+  amd64:
+    <<: *defaults
+    environment:
+      ARCH: amd64
+      MICROBADGER_WEBHOOK: ${MICROBADGER_WEBHOOK_AMD64}
+  armhf:
+    <<: *defaults
+    environment:
+      ARCH: armhf
+      MICROBADGER_WEBHOOK: ${MICROBADGER_WEBHOOK_ARMHF}
+  i386:
+    <<: *defaults
+    environment:
+      ARCH: i386
+      MICROBADGER_WEBHOOK: ${MICROBADGER_WEBHOOK_I386}
+
+workflows:
+  version: 2
+  build_and_maybe_deploy:
+    jobs:
+      - aarch64
+      - amd64
+      - armhf
+      - i386
