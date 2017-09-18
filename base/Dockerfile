@@ -51,7 +51,6 @@ RUN \
     && rm -f -r \
         /tmp/*
 
-
 # Entrypoint & CMD
 ENTRYPOINT [ "/init" ]
 
