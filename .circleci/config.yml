@@ -17,7 +17,7 @@ defaults: &defaults
             fi
       - checkout
       - deploy:
-          name: Build and (maybe) deploy for ${ARCH}
+          name: Build and (maybe) deploy
           command: |
               if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
                 docker run \
@@ -28,7 +28,7 @@ defaults: &defaults
                   --git \
                   --image "hassioaddons/base-{arch}" \
                   --from ${FROM} \
-                  --target ${ARCH} \
+                  --target base \
                   --${ARCH} \
                   --push
               else
@@ -40,7 +40,7 @@ defaults: &defaults
                   --git \
                   --image "hassioaddons/base-{arch}" \
                   --from ${FROM} \
-                  --target ${ARCH} \
+                  --target base \
                   --${ARCH}
               fi
       - deploy:
