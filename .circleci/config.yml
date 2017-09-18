@@ -17,7 +17,7 @@ defaults: &defaults
             fi
       - checkout
       - deploy:
-          name: Build and (maybe) deploy for ${ARCH}
+          name: Build and (maybe) deploy
           command: |
               if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
                 docker run \
@@ -27,7 +27,8 @@ defaults: &defaults
                   hassioaddons/build-env:latest \
                   --git \
                   --image "hassioaddons/base-{arch}" \
-                  --target ${ARCH} \
+                  --from ${FROM} \
+                  --target base \
                   --${ARCH} \
                   --push
               else
@@ -38,7 +39,8 @@ defaults: &defaults
                   hassioaddons/build-env:latest \
                   --git \
                   --image "hassioaddons/base-{arch}" \
-                  --target ${ARCH} \
+                  --from ${FROM} \
+                  --target base \
                   --${ARCH}
               fi
       - deploy:
@@ -53,21 +55,25 @@ jobs:
     <<: *defaults
     environment:
       ARCH: aarch64
+      FROM: arm64v8/alpine:3.6
       MICROBADGER_WEBHOOK: hassioaddons/base-aarch64/xPXzVNfmlHE-TbnO6_v2_G5XVt4=
   amd64:
     <<: *defaults
     environment:
       ARCH: amd64
+      FROM: alpine:3.6
       MICROBADGER_WEBHOOK: hassioaddons/base-amd64/9VpSGXcF3-G8pL-mKXq-0WWvG3g=
   armhf:
     <<: *defaults
     environment:
       ARCH: armhf
+      FROM: arm32v6/alpine:3.6
       MICROBADGER_WEBHOOK: hassioaddons/base-armhf/PzdnuORNZ7a76EmFKI1mrby2p74=
   i386:
     <<: *defaults
     environment:
       ARCH: i386
+      FROM: i386/alpine:3.6
       MICROBADGER_WEBHOOK: hassioaddons/base-i386/te8Hu20AiumjGJbSK0Bf99iivhI=
 
 workflows:
