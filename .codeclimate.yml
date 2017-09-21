@@ -8,5 +8,6 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "**.sh"
+    - "**.sh"
+    - "**.md"
 exclude_paths: []
