@@ -12,14 +12,16 @@ defaults: &defaults
       - run:
           name: Log in to Docker Hub
           command: |
-            if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+            if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
+            then
               docker login -u ${DOCKER_LOGIN} -p ${DOCKER_PASSWORD}
             fi
       - checkout
       - deploy:
           name: Build and (maybe) deploy
           command: |
-              if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+              if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
+              then
                 docker run \
                   --privileged \
                   -v ~/.docker:/root/.docker \
@@ -46,7 +48,8 @@ defaults: &defaults
       - deploy:
           name: Send notification to Microbadger
           command: |
-              if [[ "${CIRCLE_BRANCH}" = "master" ]]; then
+              if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
+              then
                 curl -X POST https://hooks.microbadger.com/images/${MICROBADGER_WEBHOOK}
               fi
 
@@ -80,7 +83,19 @@ workflows:
   version: 2
   build_and_maybe_deploy:
     jobs:
-      - aarch64
-      - amd64
-      - armhf
-      - i386
+      - aarch64:
+          filters:
+            tags:
+              only: /.*/
+      - amd64:
+          filters:
+            tags:
+              only: /.*/
+      - armhf:
+          filters:
+            tags:
+              only: /.*/
+      - i386:
+          filters:
+            tags:
+              only: /.*/
