@@ -20,6 +20,7 @@ RUN \
         tar \
     \
     && apk add --no-cache \
+        bash \
         ca-certificates \
         eudev \
         jq \
