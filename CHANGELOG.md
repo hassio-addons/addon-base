@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 - 
 
+## [v0.0.2] (2017-09-26)
+
+### Changed
+
+- Updated add-on to support new build environment [][]
+
 ## [v0.0.1] (2017-09-21)
 
 ### Added
