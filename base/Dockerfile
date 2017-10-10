@@ -6,36 +6,36 @@ ENV \
     HOME="/root" \
     LANG="C.UTF-8" \
     PS1="$(whoami)@$(hostname):$(pwd)$ " \
+    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+    S6_CMD_WAIT_FOR_SERVICES=1 \
     TERM="xterm"
 
 # Copy root filesystem
 COPY rootfs /
 
 # Install base system
-ARG BUILD_ARCH
-ARG S6_OVERLAY_VERSION="v1.20.0.0"
+ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        curl \
         tar \
     \
     && apk add --no-cache \
         bash \
         ca-certificates \
+        curl \
         eudev \
         jq \
         tzdata \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}.tar.gz" \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.20.0.0/s6-overlay-${S6_ARCH}.tar.gz" \
         | tar zxvf - -C / \
     \
     && mkdir -p \
         /etc/cont-finish.d \
         /etc/cont-init.d \
         /etc/fix-attrs.d \
-        /etc/services.d \
     \
     && apk del --purge .build-dependencies \
     \
