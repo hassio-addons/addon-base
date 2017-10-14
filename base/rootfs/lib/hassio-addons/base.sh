@@ -251,3 +251,19 @@ hass.has_value() {
 
     return "${EX_NOK}"
 }
+
+# ------------------------------------------------------------------------------
+# Checks if we are currently running in debug mode, based on the log module
+#
+# Arguments:
+#   None
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.debug() {
+    if [[ "${LOG_LEVEL_DEBUG}" -gt "${LOG_LEVEL}" ]]; then
+        return "${EX_NOK}"
+    fi
+
+    return "${EX_OK}"
+}
