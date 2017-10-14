@@ -12,7 +12,7 @@ declare log_level
 if hass.config.exists "log_level"; then
 
     # Find the matching LOG_LEVEL
-    case "$(hass.string.lower $(hass.config.get "log_level"))" in
+    case "$(hass.string.lower "$(hass.config.get 'log_level')")" in
         all)
             log_level="${LOG_LEVEL_ALL}"
             ;;

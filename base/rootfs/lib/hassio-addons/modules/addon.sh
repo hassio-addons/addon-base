@@ -163,4 +163,3 @@ hass.addon.rebuild() {
 hass.addon.update_available() {
     hass.api.addons.update_available "$(hass.addon.slug)"
 }
-
