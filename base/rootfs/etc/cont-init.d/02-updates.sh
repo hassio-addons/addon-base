@@ -3,8 +3,8 @@
 # Community Hass.io Add-ons: Base Images
 # Displays a notice when there is an update available for this add-on
 # ==============================================================================
-# shellcheck source=base/rootfs/lib/hassio-addons/base.sh
-source /lib/hassio-addons/base.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/base.sh
+source /usr/lib/hassio-addons/base.sh
 
 if hass.api.supervisor.ping; then
     if hass.addon.update_available; then

@@ -23,17 +23,17 @@ readonly __LIB_DIR=$(dirname "${BASH_SOURCE[0]}")
 # ==============================================================================
 # MODULES
 # ==============================================================================
-#shellcheck source=base/rootfs/lib/hassio-addons/modules/addon.sh
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/addon.sh
 source "${__LIB_DIR}/modules/addon.sh"
-#shellcheck source=base/rootfs/lib/hassio-addons/modules/api.sh
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api.sh
 source "${__LIB_DIR}/modules/api.sh"
-#shellcheck source=base/rootfs/lib/hassio-addons/modules/config.sh
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/config.sh
 source "${__LIB_DIR}/modules/config.sh"
-#shellcheck source=base/rootfs/lib/hassio-addons/modules/jq.sh
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/jq.sh
 source "${__LIB_DIR}/modules/jq.sh"
-#shellcheck source=base/rootfs/lib/hassio-addons/modules/log.sh
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/log.sh
 source "${__LIB_DIR}/modules/log.sh"
-#shellcheck source=base/rootfs/lib/hassio-addons/modules/string.sh
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/string.sh
 source "${__LIB_DIR}/modules/string.sh"
 
 # ==============================================================================

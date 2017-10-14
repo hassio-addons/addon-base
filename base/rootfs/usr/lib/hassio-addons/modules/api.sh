@@ -13,17 +13,17 @@ readonly HASS_API_ENDPOINT='http://hassio'
 # ==============================================================================
 # MODULES
 # ==============================================================================
-# shellcheck source=base/rootfs/lib/hassio-addons/modules/api/addons.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api/addons.sh
 source "${__LIB_DIR}/modules/api/addons.sh"
-# shellcheck source=base/rootfs/lib/hassio-addons/modules/api/homeassistant.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api/homeassistant.sh
 source "${__LIB_DIR}/modules/api/homeassistant.sh"
-# shellcheck source=base/rootfs/lib/hassio-addons/modules/api/host.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api/host.sh
 source "${__LIB_DIR}/modules/api/host.sh"
-# shellcheck source=base/rootfs/lib/hassio-addons/modules/api/network.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api/network.sh
 source "${__LIB_DIR}/modules/api/network.sh"
-# shellcheck source=base/rootfs/lib/hassio-addons/modules/api/snapshots.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api/snapshots.sh
 source "${__LIB_DIR}/modules/api/snapshots.sh"
-# shellcheck source=base/rootfs/lib/hassio-addons/modules/api/supervisor.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/api/supervisor.sh
 source "${__LIB_DIR}/modules/api/supervisor.sh"
 
 # ==============================================================================

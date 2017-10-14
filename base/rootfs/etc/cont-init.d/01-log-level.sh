@@ -3,8 +3,8 @@
 # Community Hass.io Add-ons: Base Images
 # Sets the log level correctly
 # ==============================================================================
-# shellcheck source=base/rootfs/lib/hassio-addons/base.sh
-source /lib/hassio-addons/base.sh
+# shellcheck source=base/rootfs/usr/lib/hassio-addons/base.sh
+source /usr/lib/hassio-addons/base.sh
 
 declare log_level
 

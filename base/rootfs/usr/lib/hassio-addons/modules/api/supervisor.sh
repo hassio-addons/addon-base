@@ -66,7 +66,7 @@ hass.api.supervisor.info.last_version() {
 # Returns:
 #   Whether or not the Supervisor is on the beta channel
 # ------------------------------------------------------------------------------
-hass.api.supervisor.info.beta_channel() {
+hass.api.supervisor.info.beta_channel() { 
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.supervisor.info ".beta_channel // false"
 }
