@@ -47,12 +47,14 @@ repository contain some extras:
 - Handles logs, add-on startup banners and update notifications.
 - Several small adjustments and improvements.
 
-## Changelog
+## Changelog & Releases
 
 This repository keeps a [change log](CHANGELOG.md). The format of the log
-is based on [Keep a Changelog][keepchangelog]. Releases are based on
-[Semantic Versioning][semver], and use the format of ``MAJOR.MINOR.PATCH``.
-In a nutshell, the version will be incremented based on the following:
+is based on [Keep a Changelog][keepchangelog].
+
+Releases are based on [Semantic Versioning][semver], and use the format
+of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
+based on the following:
 
 - ``MAJOR``: Incompatible or major changes.
 - ``MINOR``: Backwards-compatible new features and enhancements.
@@ -77,7 +79,7 @@ You could also [open an issue here][issue] GitHub.
 This is an active open-source project. We are always open to people who want to
 use the code or contribute to it.
 
-We've set up a separate document for our 
+We've set up a separate document for our
 [contribution guidelines](CONTRIBUTING.md).
 
 Thank you for being involved! :heart_eyes:
