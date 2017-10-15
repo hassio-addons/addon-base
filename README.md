@@ -160,7 +160,7 @@ SOFTWARE.
 [label-schema]: http://label-schema.org/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-base.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2017.svg
-[project-stage-shield]: https://img.shields.io/badge/Project%20Stage-Experimental-yellow.svg
+[project-stage-shield]: https://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository
 [s6]: http://skarnet.org/software/s6/overview.html
