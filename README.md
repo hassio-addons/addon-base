@@ -8,7 +8,7 @@
 [![Code Climate][codeclimate-shield]][codeclimate]
 [![CircleCI][circleci-shield]][circleci]
 
-Docker base images used by Community Hass.io add-ons.
+Docker base images used by Community Hass.io Add-ons.
 
 ## Docker status
 
@@ -38,18 +38,25 @@ These are the base images used by add-ons created by the Community Hass.io
 Add-ons.
 
 While Home Assistant provides base images, the images provided by this
-repository contain some extra's:
+repository contain some extras:
 
 - Adds [s6] as a process supervisor.
-- Adds `jq`.
+- Adds `jq` & `curl`, since every add-on uses them.
 - Adds Docker [Label Schema][label-schema] support.
+- Adds a large Bash function library for use with an add-on.
+- Handles logs, add-on startup banners and update notifications.
 - Several small adjustments and improvements.
 
 ## Changelog
 
-This repository keeps a [change log](CHANGELOG.md) and adhere to
-[Semantic Versioning][semver]. The format of the log is based on
-[Keep a Changelog][keepchangelog].
+This repository keeps a [change log](CHANGELOG.md). The format of the log
+is based on [Keep a Changelog][keepchangelog]. Releases are based on
+[Semantic Versioning][semver], and use the format of ``MAJOR.MINOR.PATCH``.
+In a nutshell, the version will be incremented based on the following:
+
+- ``MAJOR``: Incompatible or major changes.
+- ``MINOR``: Backwards-compatible new features and enhancements.
+- ``PATCH``: Backwards-compatible bugfixes and package updates.
 
 ## Support
 
@@ -70,7 +77,8 @@ You could also [open an issue here][issue] GitHub.
 This is an active open-source project. We are always open to people who want to
 use the code or contribute to it.
 
-We've set up a separate document for our [contribution guidelines](CONTRIBUTING.md).
+We've set up a separate document for our 
+[contribution guidelines](CONTRIBUTING.md).
 
 Thank you for being involved! :heart_eyes:
 
@@ -81,7 +89,7 @@ The original setup of this repository is by [Franck Nijhof][frenck].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## We've got some Hass.io add-ons for you
+## We have got some Hass.io add-ons for you
 
 Want some more functionality to your Hass.io Home Assistant instance?
 
