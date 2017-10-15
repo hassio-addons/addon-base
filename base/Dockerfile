@@ -34,7 +34,6 @@ RUN \
     \
     && mkdir -p \
         /etc/cont-finish.d \
-        /etc/cont-init.d \
         /etc/fix-attrs.d \
     \
     && apk del --purge .build-dependencies \
