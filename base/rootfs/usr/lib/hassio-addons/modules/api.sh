@@ -52,10 +52,11 @@ hass.api.call() {
 
     hass.log.trace "${FUNCNAME[0]}" "$@"
 
-    if ! response=$(curl --silent \
+    if ! response=$(curl --silent --show-error \
         --write-out '\n%{http_code}' --request "${method}" \
         "${HASS_API_ENDPOINT}${resource}"
     ); then
+        hass.log.debug "${response}"
         hass.log.error "Something went wrong contacting the API"
         return "${EX_NOK}"
     fi
