@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.0.1] (2017-10-25)
+
+[Full Changelog][v1.0.0-v1.0.1]
+
+### Change
+
+- Added extra debug output when curl API call fails #11
+
 ## [v1.0.0] (2017-10-15)
 
 [Full Changelog][v0.0.2-v1.0.0]
@@ -48,7 +56,9 @@ No unreleased changes yet.
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
 [v0.0.1-v0.0.2]: https://github.com/hassio-addons/addon-base/compare/v0.0.1...v0.0.2
-[v0.0.2-v1.0.0]: https://github.com/hassio-addons/addon-base/compare/v0.0.2...v1.0.0
 [v0.0.1]: https://github.com/hassio-addons/addon-base/tree/v0.0.1
+[v0.0.2-v1.0.0]: https://github.com/hassio-addons/addon-base/compare/v0.0.2...v1.0.0
 [v0.0.2]: https://github.com/hassio-addons/addon-base/tree/v0.0.2
+[v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-base/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/hassio-addons/addon-base/tree/v1.0.0
+[v1.0.1]: https://github.com/hassio-addons/addon-base/tree/v1.0.1
