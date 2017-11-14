@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+### Added
+
+- Added `service` command that emulates systemd behavoir for S6
+
 ### Changes
 
 - Updated README to match style of other add-ons
