@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 - Added `service` command that emulates systemd behavoir for S6
 
+### Changed
+
+- Upgraded Qemu static binaries to v2.9.1
+
 ### Changes
 
 - Updated README to match style of other add-ons
