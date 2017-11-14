@@ -1,14 +1,37 @@
 # Community Hass.io Add-ons: Base Images
 
+[![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
-![Maintenance][maintenance-shield]
-![Awesome][awesome-shield]
+![Project Maintenance][maintenance-shield]
+[![GitHub Activity][commits-shield]][commits]
 [![License][license-shield]](LICENSE.md)
 
-[![Code Climate][codeclimate-shield]][codeclimate]
 [![CircleCI][circleci-shield]][circleci]
+[![Code Climate][codeclimate-shield]][codeclimate]
+[![Bountysource][bountysource-shield]][bountysource]
+[![Discord][discord-shield]][discord]
+[![Community Forum][forum-shield]][forum]
+
+[![Patreon][patreon-shield]][patreon]
+[![PayPal][paypal-shield]][paypal]
+[![Bitcoin][bitcoin-shield]][bitcoin]
 
 Docker base images used by Community Hass.io Add-ons.
+
+## About
+
+These are the base images used by add-ons created by the Community Hass.io
+Add-ons.
+
+While Home Assistant provides base images, the images provided by this
+repository contain some extras:
+
+- Adds [s6] as a process supervisor.
+- Adds `jq` & `curl`, since every add-on uses them.
+- Adds Docker [Label Schema][label-schema] support.
+- Adds a large Bash function library for use with an add-on.
+- Handles logs, add-on startup banners and update notifications.
+- Several small adjustments and improvements.
 
 ## Docker status
 
@@ -32,21 +55,6 @@ Docker base images used by Community Hass.io Add-ons.
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
 
-## About
-
-These are the base images used by add-ons created by the Community Hass.io
-Add-ons.
-
-While Home Assistant provides base images, the images provided by this
-repository contain some extras:
-
-- Adds [s6] as a process supervisor.
-- Adds `jq` & `curl`, since every add-on uses them.
-- Adds Docker [Label Schema][label-schema] support.
-- Adds a large Bash function library for use with an add-on.
-- Handles logs, add-on startup banners and update notifications.
-- Several small adjustments and improvements.
-
 ## Changelog & Releases
 
 This repository keeps a [change log](CHANGELOG.md). The format of the log
@@ -66,7 +74,7 @@ Got questions?
 
 You have several options to get them answered:
 
-- The Home Assistant [Community Forums][forums], we have a
+- The Home Assistant [Community Forum][forum], we have a
   [dedicated topic][forums] on that forum regarding this repository.
 - The Home Assistant [Discord Chat Server][discord] for general Home Assistant
   discussions and questions.
@@ -140,14 +148,21 @@ SOFTWARE.
 [armhf-microbadger]: https://microbadger.com/images/hassioaddons/base-armhf
 [armhf-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/base-armhf.svg
 [armhf-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/base-armhf.svg
-[awesome-shield]: https://img.shields.io/badge/awesome%3F-yes-brightgreen.svg
+[bitcoin-shield]: https://img.shields.io/badge/donate-bitcoin-blue.svg
+[bitcoin]: https://blockchain.info/payment_request?address=3GVzgN6NpVtfXnyg5dQnaujtqVTEDBCtAH
+[bountysource-shield]: https://img.shields.io/bountysource/team/hassio-addons/activity.svg
+[bountysource]: https://www.bountysource.com/teams/hassio-addons/issues
 [circleci-shield]: https://img.shields.io/circleci/project/github/hassio-addons/addon-base.svg
 [circleci]: https://circleci.com/gh/hassio-addons/addon-base
-[codeclimate-shield]: https://img.shields.io/codeclimate/github/hassio-addons/addon-base.svg
+[codeclimate-shield]: https://img.shields.io/badge/code%20climate-protected-brightgreen.svg
 [codeclimate]: https://codeclimate.com/github/hassio-addons/addon-base
+[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-base.svg
+[commits]: https://github.com/hassio-addons/addon-base/commits/master
 [contributors]: https://github.com/hassio-addons/addon-base/graphs/contributors
+[discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
-[forums]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
+[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
+[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [frenck]: https://github.com/frenck
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/base-i386
@@ -160,8 +175,14 @@ SOFTWARE.
 [label-schema]: http://label-schema.org/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-base.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2017.svg
+[patreon-shield]: https://img.shields.io/badge/donate-patreon-blue.svg
+[patreon]: https://www.patreon.com/frenck
+[paypal-shield]: https://img.shields.io/badge/donate-paypal-blue.svg
+[paypal]: https://www.paypal.me/FranckNijhof
 [project-stage-shield]: https://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
+[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-base.svg
+[releases]: https://github.com/hassio-addons/addon-base/releases
 [repository]: https://github.com/hassio-addons/repository
 [s6]: http://skarnet.org/software/s6/overview.html
 [semver]: http://semver.org/spec/v2.0.0.html
