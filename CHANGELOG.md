@@ -15,7 +15,7 @@ No unreleased changes yet.
 
 ### Added
 
-- Added `service` command that emulates systemd behavoir for S6
+- Added `service` command that emulates systemd behavior for S6
 
 ### Changed
 
@@ -73,4 +73,6 @@ No unreleased changes yet.
 [v0.0.2]: https://github.com/hassio-addons/addon-base/tree/v0.0.2
 [v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-base/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/hassio-addons/addon-base/tree/v1.0.0
+[v1.0.1-v1.1.0]: https://github.com/hassio-addons/addon-base/compare/v1.0.1...v1.1.0
 [v1.0.1]: https://github.com/hassio-addons/addon-base/tree/v1.0.1
+[v1.1.0]: https://github.com/hassio-addons/addon-base/tree/v1.1.0
