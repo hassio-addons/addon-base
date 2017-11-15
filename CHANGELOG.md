@@ -7,17 +7,20 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v1.1.0] (2017-11-15)
+
+[Full Changelog][v1.0.1-v1.1.0]
+
 ### Added
 
 - Added `service` command that emulates systemd behavoir for S6
 
 ### Changed
 
-- Upgraded Qemu static binaries to v2.9.1
-
-### Changes
-
 - Updated README to match style of other add-ons
+- Upgraded Qemu static binaries to v2.9.1
 
 ## [v1.0.1] (2017-10-25)
 
