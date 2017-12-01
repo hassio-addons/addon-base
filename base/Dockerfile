@@ -10,9 +10,6 @@ ENV \
     S6_CMD_WAIT_FOR_SERVICES=1 \
     TERM="xterm"
 
-# Copy root filesystem
-COPY rootfs /
-
 # Install base system
 ARG BUILD_ARCH=amd64
 RUN \
@@ -50,6 +47,9 @@ RUN \
     \
     && rm -f -r \
         /tmp/*
+
+# Copy root filesystem
+COPY rootfs /
 
 # Entrypoint & CMD
 ENTRYPOINT [ "/init" ]
