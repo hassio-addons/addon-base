@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No unreleased changes yet.
+### Changed
+
+- Upgraded to Alpine 3.7
 
 ## [v1.1.0] (2017-11-15)
 

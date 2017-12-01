@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.6
+ARG BUILD_FROM=alpine:3.7
 FROM ${BUILD_FROM}
 
 # Environment variables
