@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 ### Added
 
 - Informational final message when container terminates by error
+- Added support for Hass.io API tokens
 
 ### Changed
 

@@ -54,6 +54,7 @@ hass.api.call() {
 
     if ! response=$(curl --silent --show-error \
         --write-out '\n%{http_code}' --request "${method}" \
+        -H "X-HASSIO-KEY: ${API_TOKEN:-}" \
         "${HASS_API_ENDPOINT}${resource}"
     ); then
         hass.log.debug "${response}"
