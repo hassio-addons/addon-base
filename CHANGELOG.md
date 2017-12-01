@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+### Added
+
+- Informational final message when container terminates by error
+
 ### Changed
 
 - Upgraded to Alpine 3.7
