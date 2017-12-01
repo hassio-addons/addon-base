@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 ### Changed
 
 - Upgraded to Alpine 3.7
+- Upgraded S6-overlay to v1.21.2.1
 
 ## [v1.1.0] (2017-11-15)
 
