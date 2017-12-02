@@ -5,7 +5,6 @@
 # ==============================================================================
 
 if [[ "${S6_STAGE2_EXITED}" -ne 0 ]]; then
-    echo "Exit code: $(</var/run/s6/env-stage3/S6_STAGE2_EXITED)"
     echo '-----------------------------------------------------------'
     echo '                Oops! Something went wrong.'
     echo ' '
