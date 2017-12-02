@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v1.1.0] (2017-11-15)
+
+[Full Changelog][v1.1.0-v1.2.0]
+
 ### Added
 
 - Informational final message when container terminates by error
@@ -83,4 +89,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [v1.0.0]: https://github.com/hassio-addons/addon-base/tree/v1.0.0
 [v1.0.1-v1.1.0]: https://github.com/hassio-addons/addon-base/compare/v1.0.1...v1.1.0
 [v1.0.1]: https://github.com/hassio-addons/addon-base/tree/v1.0.1
+[v1.1.0-v1.2.0]: https://github.com/hassio-addons/addon-base/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/hassio-addons/addon-base/tree/v1.1.0
+[v1.2.0]: https://github.com/hassio-addons/addon-base/tree/v1.2.0
