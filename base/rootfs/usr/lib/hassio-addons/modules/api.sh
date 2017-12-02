@@ -46,15 +46,20 @@ hass.api.call() {
     local resource=${2}
     local raw=${3:-false}
     local filter=${4:-}
+    local auth_header='X-HASSIO-KEY;'
     local response
     local status
     local result
 
     hass.log.trace "${FUNCNAME[0]}" "$@"
 
+    if [[ ! -z "${API_TOKEN:-}" ]]; then
+        auth_header="X-HASSIO-KEY: ${API_TOKEN}"
+    fi
+
     if ! response=$(curl --silent --show-error \
         --write-out '\n%{http_code}' --request "${method}" \
-        -H "X-HASSIO-KEY: ${API_TOKEN:-}" \
+        -H "${auth_header}" \
         "${HASS_API_ENDPOINT}${resource}"
     ); then
         hass.log.debug "${response}"
