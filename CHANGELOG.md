@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
-## [v1.1.0] (2017-11-15)
+## [v1.2.0] (2017-12-02)
 
 [Full Changelog][v1.1.0-v1.2.0]
 
