@@ -39,9 +39,7 @@ RUN \
     && curl -L -s "https://github.com/frenck/semver/releases/download/v0.1.0/semver_linux_${SEMVER_ARCH}.tar.gz" \
         | tar zxvf - -C /usr/bin/ \
     \
-    && mkdir -p \
-        /etc/cont-finish.d \
-        /etc/fix-attrs.d \
+    && mkdir -p /etc/fix-attrs.d \
     \
     && apk del --purge .build-dependencies \
     \
