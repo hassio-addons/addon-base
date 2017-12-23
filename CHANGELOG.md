@@ -9,6 +9,36 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.3.0] (2017-12-23)
+
+[Full Changelog][v1.2.0-v1.3.0]
+
+### Added
+
+- Adds version requirements checks for HA and Supervisor
+
+### Changed
+
+- Prevents possible future Docker login issue
+- Pass local CircleCI Docker socket into the build container
+- Enable Docker experimental features in CircleCI
+- Upgrades Qemu binaries to v2.10.1, download on build
+- Moved download of Qemu binaries in CircleCI
+- Adds base/rootfs/usr/bin/qemu-* to .gitignore
+- Updates forum link in README
+- Upgrades semver tool to v0.2.0
+- Upgrades QEMU to v2.11.0 (#18)
+
+### Fixed
+
+- Fixes typos in latest version number of the CHANGELOG
+- Fixes issue in version check logic
+
+### Removed
+
+- Removed Microbadger notification hooks
+- Removes cont-finish directory creation from Dockerfile
+
 ## [v1.2.0] (2017-12-02)
 
 [Full Changelog][v1.1.0-v1.2.0]
@@ -91,4 +121,6 @@ No unreleased changes yet.
 [v1.0.1]: https://github.com/hassio-addons/addon-base/tree/v1.0.1
 [v1.1.0-v1.2.0]: https://github.com/hassio-addons/addon-base/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/hassio-addons/addon-base/tree/v1.1.0
+[v1.2.0-v1.3.0]: https://github.com/hassio-addons/addon-base/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/hassio-addons/addon-base/tree/v1.2.0
+[v1.3.0]: https://github.com/hassio-addons/addon-base/tree/v1.3.0
