@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.3.1] (2018-01-06)
+
+[Full Changelog][v1.3.0-v1.3.1]
+
+### Changed
+
+- Updated Bash Hass.io library to match Hass.io 0.79 API
+- Upgraded S6-overlay to v1.21.2.2
+- Updated maintenance year, it is 2018
+
 ## [v1.3.0] (2017-12-23)
 
 [Full Changelog][v1.2.0-v1.3.0]
@@ -123,4 +133,6 @@ No unreleased changes yet.
 [v1.1.0]: https://github.com/hassio-addons/addon-base/tree/v1.1.0
 [v1.2.0-v1.3.0]: https://github.com/hassio-addons/addon-base/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/hassio-addons/addon-base/tree/v1.2.0
+[v1.3.0-v1.3.1]: https://github.com/hassio-addons/addon-base/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/hassio-addons/addon-base/tree/v1.3.0
+[v1.3.1]: https://github.com/hassio-addons/addon-base/tree/v1.3.1
