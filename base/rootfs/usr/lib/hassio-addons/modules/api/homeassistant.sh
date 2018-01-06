@@ -63,19 +63,6 @@ hass.api.homeassistant.info.image() {
 }
 
 # ------------------------------------------------------------------------------
-# Returns a list of devices available to Home Assistant
-#
-# Arguments:
-#   None
-# Returns:
-#   List of devices
-# ------------------------------------------------------------------------------
-hass.api.homeassistant.info.devices() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.info ".devices[]"
-}
-
-# ------------------------------------------------------------------------------
 # Returns whether or not a custom version of Home Assistant is installed
 #
 # Arguments:

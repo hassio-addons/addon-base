@@ -98,6 +98,19 @@ hass.api.supervisor.info.timezone() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the time to wait after boot in seconds
+#
+# Arguments:
+#   None
+# Returns:
+#   Second to wait for boot
+# ------------------------------------------------------------------------------
+hass.api.supervisor.info.wait_boot() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.info ".wait_boot"
+}
+
+# ------------------------------------------------------------------------------
 # Returns a list of all current installed add-ons
 #
 # Arguments:

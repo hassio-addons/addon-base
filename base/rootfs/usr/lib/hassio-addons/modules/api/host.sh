@@ -155,6 +155,19 @@ hass.api.host.hardware.disk() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns a list of available disk devices on the host system
+#
+# Arguments:
+#   None
+# Returns:
+#   JSON object
+# ------------------------------------------------------------------------------
+hass.api.host.hardware.gpio() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.hardware ".gpio[]"
+}
+
+# ------------------------------------------------------------------------------
 # Returns a list of available audio devices on the host system
 #
 # Arguments:
@@ -204,4 +217,18 @@ hass.api.host.shutdown() {
 hass.api.host.update() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.call POST /host/update
+}
+
+
+# ------------------------------------------------------------------------------
+# Reload the host controller
+#
+# Arguments:
+#   None
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.host.reload() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.call POST /host/reload
 }

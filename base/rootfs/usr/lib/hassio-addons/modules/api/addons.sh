@@ -177,6 +177,20 @@ hass.api.addons.info.description() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the long description of an add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Description of the add-on
+# ------------------------------------------------------------------------------
+hass.api.addons.info.long_description() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".long_description"
+}
+
+# ------------------------------------------------------------------------------
 # Returns the version of an add-on
 #
 # Arguments:
@@ -331,6 +345,34 @@ hass.api.addons.info.host_network() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns whether or not this add-on has IPC access
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on has IPC access
+# ------------------------------------------------------------------------------
+hass.api.addons.info.host_ipc() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".host_ipc // false"
+}
+
+# ------------------------------------------------------------------------------
+# Returns whether or not this add-on has DBus access to the host
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on has DBus access
+# ------------------------------------------------------------------------------
+hass.api.addons.info.host_dbus() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".host_dbus // false"
+}
+
+# ------------------------------------------------------------------------------
 # Returns the privileges the add-on has on to the hardware / system.
 #
 # Arguments:
@@ -359,6 +401,20 @@ hass.api.addons.info.devices() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns if UART was made available to the add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on as automatic UART enabled
+# ------------------------------------------------------------------------------
+hass.api.addons.info.auto_uart() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".auto_uart // false"
+}
+
+# ------------------------------------------------------------------------------
 # Returns whether or not this add-on has a logo available
 #
 # Arguments:
@@ -370,6 +426,20 @@ hass.api.addons.info.logo() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
     hass.api.addons.info "${addon}" ".logo // false"
+}
+
+# ------------------------------------------------------------------------------
+# Returns whether or not this add-on has a changelog available
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on has a changelog available
+# ------------------------------------------------------------------------------
+hass.api.addons.info.changelog() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".changelog // false"
 }
 
 # ------------------------------------------------------------------------------
@@ -467,7 +537,7 @@ hass.api.addons.info.audio() {
 hass.api.addons.info.audio_input() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".audio_input"
+    hass.api.addons.info "${addon}" ".audio_input // empty"
 }
 
 # ------------------------------------------------------------------------------
@@ -481,7 +551,7 @@ hass.api.addons.info.audio_input() {
 hass.api.addons.info.audio_output() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".audio_output"
+    hass.api.addons.info "${addon}" ".audio_output // empty"
 }
 
 # ------------------------------------------------------------------------------
