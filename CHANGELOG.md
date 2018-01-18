@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.3.2] (2018-01-18)
+
+[Full Changelog][v1.3.1-v1.3.2]
+
+### Changed
+
+- Upgrades semver cli to v0.3.0
+- Rename Hassio API token #19 (@pvizeli)
+
 ## [v1.3.1] (2018-01-06)
 
 [Full Changelog][v1.3.0-v1.3.1]
@@ -135,4 +144,6 @@ No unreleased changes yet.
 [v1.2.0]: https://github.com/hassio-addons/addon-base/tree/v1.2.0
 [v1.3.0-v1.3.1]: https://github.com/hassio-addons/addon-base/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/hassio-addons/addon-base/tree/v1.3.0
+[v1.3.1-v1.3.2]: https://github.com/hassio-addons/addon-base/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/hassio-addons/addon-base/tree/v1.3.1
+[v1.3.2]: https://github.com/hassio-addons/addon-base/tree/v1.3.2
