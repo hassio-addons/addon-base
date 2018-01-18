@@ -15,7 +15,7 @@ if hass.api.supervisor.ping; then
         hass.log.debug "Current Supervisor version: ${version}"
         hass.log.debug "Supervisor version condition: ${SUPERVISOR_VERSION}"
 
-        if semver -q "${SUPERVISOR_VERSION}" "${version}"; then
+        if semver -q "${version}" "${SUPERVISOR_VERSION}"; then
             hass.log.info "Supervisor version requirements checks passed."
         else
             hass.log.fatal "You Supervisor version is: ${version}"
@@ -29,7 +29,7 @@ if hass.api.supervisor.ping; then
         hass.log.debug "Current Home Assistant version: ${version}"
         hass.log.debug "Home Assistant version condition: ${HOME_ASSISTANT_VERSION}"
 
-        if semver -q "${HOME_ASSISTANT_VERSION}" "${version}"; then
+        if semver -q "${version}" "${HOME_ASSISTANT_VERSION}"; then
             hass.log.info "Home Assistant version requirements checks passed."
         else
             hass.log.fatal "You Home Assistant version is: ${version}"
