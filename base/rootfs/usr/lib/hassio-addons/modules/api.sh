@@ -53,8 +53,8 @@ hass.api.call() {
 
     hass.log.trace "${FUNCNAME[0]}" "$@"
 
-    if [[ ! -z "${API_TOKEN:-}" ]]; then
-        auth_header="X-HASSIO-KEY: ${API_TOKEN}"
+    if [[ ! -z "${HASSIO_TOKEN:-}" ]]; then
+        auth_header="X-HASSIO-KEY: ${HASSIO_TOKEN}"
     fi
 
     if ! response=$(curl --silent --show-error \
