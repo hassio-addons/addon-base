@@ -36,7 +36,7 @@ RUN \
         elif [[ "${BUILD_ARCH}" = "aarch64" || "${BUILD_ARCH}" = "armhf" ]]; then SEMVER_ARCH="arm"; \
         else SEMVER_ARCH="${BUILD_ARCH}"; fi \
     \
-    && curl -L -s "https://github.com/frenck/semver/releases/download/v0.2.0/semver_linux_${SEMVER_ARCH}.tar.gz" \
+    && curl -L -s "https://github.com/frenck/semver/releases/download/v0.3.0/semver_linux_${SEMVER_ARCH}.tar.gz" \
         | tar zxvf - -C /usr/bin/ \
     \
     && mkdir -p /etc/fix-attrs.d \
