@@ -7,13 +7,19 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v1.3.3] (2018-02-21)
+
+[Full Changelog][v1.3.2-v1.3.3]
+
 ### Fixed
 
 - Add-on banner throws hassio.api.security warnings
 
 ### Changed
 
-- Update all Alpine packages on build
+- Updates all Alpine packages on build
 
 ## [v1.3.2] (2018-01-18)
 
@@ -152,4 +158,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [v1.3.0]: https://github.com/hassio-addons/addon-base/tree/v1.3.0
 [v1.3.1-v1.3.2]: https://github.com/hassio-addons/addon-base/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/hassio-addons/addon-base/tree/v1.3.1
+[v1.3.2-v1.3.3]: https://github.com/hassio-addons/addon-base/compare/v1.3.2...v1.3.3
 [v1.3.2]: https://github.com/hassio-addons/addon-base/tree/v1.3.2
+[v1.3.3]: https://github.com/hassio-addons/addon-base/tree/v1.3.3
