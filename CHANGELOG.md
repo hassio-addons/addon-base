@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 - Add-on banner throws hassio.api.security warnings
 
+### Changed
+
+- Update all Alpine packages on build
+
 ## [v1.3.2] (2018-01-18)
 
 [Full Changelog][v1.3.1-v1.3.2]

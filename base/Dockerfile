@@ -16,7 +16,9 @@ COPY rootfs /
 # Install base system
 ARG BUILD_ARCH=amd64
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    apk upgrade --no-cache \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
         tar \
     \
     && apk add --no-cache \
