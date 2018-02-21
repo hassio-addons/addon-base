@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/with-contenv bash
 # ==============================================================================
 # Community Hass.io Add-ons: Base Images
 # Displays a simple add-on banner on startup

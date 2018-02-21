@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No unreleased changes yet.
+### Fixed
+
+- Add-on banner throws hassio.api.security warnings
 
 ## [v1.3.2] (2018-01-18)
 
