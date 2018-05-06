@@ -151,7 +151,7 @@ shellcheck:
   script:
     - |
       for file in $(grep -IRl "#\!\(/usr/bin/env \|/bin/\)" --exclude-dir ".git" "${ADDON_TARGET}"); do
-        if ! shellcheck $file; then
+        if ! shellcheck --external-sources $file; then
           export FAILED=1
         else
           echo "$file OK"
