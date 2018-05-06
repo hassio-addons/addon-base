@@ -20,7 +20,8 @@ stages:
     - docker info
     - docker login -u gitlab-ci-token -p "${CI_JOB_TOKEN}" registry.gitlab.com
   services:
-    - docker:dind
+    - name: docker:dind
+      command: ["--experimental"]
 
 # Generic preflight template
 .preflight: &preflight
