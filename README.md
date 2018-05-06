@@ -56,8 +56,6 @@ repository contain some extras:
 
 ## Changelog & Releases
 
-## Changelog
-
 This repository keeps a change log using [GitHub's releases][releases]
 functionality. The format of the log is based on
 [Keep a Changelog][keepchangelog].
