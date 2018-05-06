@@ -162,7 +162,7 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/?u=frenck
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-base/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-base/commits/master
+[gitlabci]: https://gitlab.com/hassio-addons/addon-base/pipelines
 [i386-anchore-shield]: https://anchore.io/service/badges/image/e84714210ab906e08ccc79c951cd8823996c8003dabcc86e18effb9f6d47ed0a
 [i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
