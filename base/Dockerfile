@@ -1,4 +1,5 @@
 ARG BUILD_FROM=alpine:3.7
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Environment variables
@@ -16,18 +17,16 @@ COPY rootfs /
 # Install base system
 ARG BUILD_ARCH=amd64
 RUN \
-    apk upgrade --no-cache \
-    \
-    && apk add --no-cache --virtual .build-dependencies \
-        tar \
+    apk add --no-cache --virtual .build-dependencies \
+        tar=1.29-r1 \
     \
     && apk add --no-cache \
-        bash \
-        ca-certificates \
-        curl \
-        eudev \
-        jq \
-        tzdata \
+        bash=4.4.19-r1 \
+        ca-certificates=20171114-r0 \
+        curl=7.59.0-r0 \
+        eudev=3.2.4-r1 \
+        jq=1.5-r5 \
+        tzdata=2017c-r0 \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
