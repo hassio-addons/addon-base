@@ -10,7 +10,7 @@ repository:
   has_downloads: false
   default_branch: master
   allow_squash_merge: true
-  allow_merge_commit: true
+  allow_merge_commit: false
   allow_rebase_merge: true
 labels:
   # Priority labels
