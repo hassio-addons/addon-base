@@ -166,7 +166,7 @@ branches:
       required_status_checks:
         strict: false
         contexts: []
-      enforce_admins: true
+      enforce_admins: false
       restrictions:
         users: []
         teams:
