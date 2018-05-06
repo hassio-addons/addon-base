@@ -1,6 +1,6 @@
 {
     "image": "hassioaddons/base-{arch}",
-    "squash": true,
+    "squash": false,
     "build_from": {
         "aarch64": "arm64v8/alpine:3.7",
         "amd64": "alpine:3.7",
