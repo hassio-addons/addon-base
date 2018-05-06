@@ -16,6 +16,7 @@ COPY rootfs /
 
 # Install base system
 ARG BUILD_ARCH=amd64
+# hadolint ignore=DL3018
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         tar=1.29-r1 \
@@ -25,7 +26,7 @@ RUN \
         ca-certificates=20171114-r0 \
         curl=7.59.0-r0 \
         eudev=3.2.4-r1 \
-        jq=1.5-r4 \
+        jq>1.5-r4 \
         tzdata=2017c-r0 \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
