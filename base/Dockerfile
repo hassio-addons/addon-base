@@ -31,7 +31,7 @@ RUN \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.2/s6-overlay-${S6_ARCH}.tar.gz" \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-${S6_ARCH}.tar.gz" \
         | tar zxvf - -C / \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then SEMVER_ARCH="386"; \
