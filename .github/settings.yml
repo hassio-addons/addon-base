@@ -33,7 +33,7 @@ labels:
 
   # Type labels
   - name: "Type: Bug"
-    color: ffffff
+    color: ee0701
     description: "Inconsistencies or issues which will cause a problem for users or implementors."
     oldname: "Bug"
   - name: "Type: Documentation"
@@ -109,31 +109,31 @@ labels:
     oldname: "Blocked"
 
   # Closing status labels
-  - name: "Resolution: Known limitation"
+  - name: "Closed: Known limitation"
     color: e6e6e6
     description: "Issue is closed, it is a known limitation."
     oldname: "Known Limitation"
-  - name: "Resolution: Expected behavior"
+  - name: "Closed: Expected behavior"
     color: e6e6e6
     description: "Issues is closed, it is expected behavior."
     oldname: "Expected behavior"
-  - name: "Resolution: Duplicate"
+  - name: "Closed: Duplicate"
     color: e6e6e6
     description: "Issue is closed, duplicate of an existing issue."
     oldname: "Duplicate"
-  - name: "Resolution: Invalid"
+  - name: "Closed: Invalid"
     color: e6e6e6
     description: "Issue is closed, marked as not a valid issue (e.g., an user error)."
     oldname: "Invalid"
-  - name: "Resolution: Wrong repository"
+  - name: "Closed: Wrong repository"
     color: e6e6e6
     description: "Issue is closed, was created in the wrong repository."
     oldname: "Wrong repository"
-  - name: "Resolution: Won't Fix"
+  - name: "Closed: Won't Fix"
     color: e6e6e6
     description: "Issue is closed, it won't be fixed."
     oldname: "Won't fix"
-  - name: "Resolution: Done"
+  - name: "Closed: Done"
     color: c2e0c6
     description: "Issue closed, work on this issue has been marked complete."
     oldname: "Done"
