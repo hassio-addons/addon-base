@@ -25,7 +25,6 @@ RUN \
         bash=4.4.19-r1 \
         ca-certificates=20171114-r0 \
         curl=7.59.0-r0 \
-        eudev=3.2.4-r1 \
         jq>1.5-r4 \
         tzdata=2017c-r0 \
     \
@@ -42,6 +41,7 @@ RUN \
         | tar zxvf - -C /usr/bin/ \
     \
     && mkdir -p /etc/fix-attrs.d \
+    && mkdir -p /etc/services.d \
     \
     && apk del --purge .build-dependencies \
     \
