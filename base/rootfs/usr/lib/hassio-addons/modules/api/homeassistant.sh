@@ -128,6 +128,19 @@ hass.api.homeassistant.info.watchdog() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the Home Assistant start up time
+#
+# Arguments:
+#   None
+# Returns:
+#  Time in seconds
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.info.startup_time() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.info ".startup_time"
+}
+
+# ------------------------------------------------------------------------------
 # Updates Home Assistant to the latest version
 #
 # Arguments:
@@ -203,4 +216,108 @@ hass.api.homeassistant.check() {
 hass.api.homeassistant.logs() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.call GET /homeassistant/logs true
+}
+
+# ------------------------------------------------------------------------------
+# List all available stats about Home Assistant
+#
+# Arguments:
+#   $1 jq Filter to apply on the result (optional)
+# Returns:
+#   JSON object
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats() {
+    local filter=${1:-}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call GET /homeassistant/stats false "${filter}"
+}
+
+# ------------------------------------------------------------------------------
+# Returns CPU usage from Home Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in percent
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.cpu_percent() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".cpu_percent"
+}
+
+# ------------------------------------------------------------------------------
+# Returns memory usage from Home Assistant
+# Arguments:
+#   None
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.memory_usage() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".memory_usage"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns memory limit from Home Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.memory_limit() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".memory_limit"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns outgoing network usage from Home Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.network_tx() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".network_tx"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns incoming network usage from Home Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Bytes
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.network_rx() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".network_rx"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns disk read usage from Home Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Blocks
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.blk_read() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".blk_read"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns disk write usage from Home Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Blocks
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.stats.blk_write() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.stats ".blk_write"    
 }

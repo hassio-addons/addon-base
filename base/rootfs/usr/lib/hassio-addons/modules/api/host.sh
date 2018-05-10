@@ -24,6 +24,71 @@ hass.api.host.info() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the hostname of the host system
+#
+# Arguments:
+#   None
+# Returns:
+#   Hostname
+# ------------------------------------------------------------------------------
+hass.api.host.info.hostname() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".hostname"
+}
+
+# ------------------------------------------------------------------------------
+# Returns a list of exposed features by the host
+#
+# Arguments:
+#   None
+# Returns:
+#   List of features
+# ------------------------------------------------------------------------------
+hass.api.host.info.features() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".features[]"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the OS of the host system
+#
+# Arguments:
+#   None
+# Returns:
+#   OS
+# ------------------------------------------------------------------------------
+hass.api.host.info.operating_system() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".operating_system"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the kernel of the host system
+#
+# Arguments:
+#   None
+# Returns:
+#   OS
+# ------------------------------------------------------------------------------
+hass.api.host.info.kernel() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".kernel"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the chassis of the host system
+#
+# Arguments:
+#   None
+# Returns:
+#   OS
+# ------------------------------------------------------------------------------
+hass.api.host.info.chassis() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".chassis"
+}
+
+# ------------------------------------------------------------------------------
 # Returns the type of the host
 #
 # Arguments:
@@ -34,6 +99,19 @@ hass.api.host.info() {
 hass.api.host.info.type() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.host.info ".type"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the stability channel / deployment of the system
+#
+# Arguments:
+#   None
+# Returns:
+#   Version
+# ------------------------------------------------------------------------------
+hass.api.host.info.deployment() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".deployment"
 }
 
 # ------------------------------------------------------------------------------
@@ -60,124 +138,6 @@ hass.api.host.info.version() {
 hass.api.host.info.last_version() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.host.info ".last_version"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of exposed features by the host
-#
-# Arguments:
-#   None
-# Returns:
-#   List of features
-# ------------------------------------------------------------------------------
-hass.api.host.info.features() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.info ".features[]"
-}
-
-# ------------------------------------------------------------------------------
-# Returns the hostname of the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   Hostname
-# ------------------------------------------------------------------------------
-hass.api.host.info.hostname() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.info ".hostname"
-}
-
-# ------------------------------------------------------------------------------
-# Returns the OS of the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   OS
-# ------------------------------------------------------------------------------
-hass.api.host.info.os() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.info ".os"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of available hardware on the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   JSON object with hardware
-# ------------------------------------------------------------------------------
-hass.api.host.hardware() {
-    local filter=${1:-}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.call GET /host/hardware false "${filter}"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of available serial devices on the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   JSON object
-# ------------------------------------------------------------------------------
-hass.api.host.hardware.serial() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.hardware ".serial[]"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of available input devices on the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   JSON object
-# ------------------------------------------------------------------------------
-hass.api.host.hardware.input() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.hardware ".input[]"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of available disk devices on the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   JSON object
-# ------------------------------------------------------------------------------
-hass.api.host.hardware.disk() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.hardware ".disk[]"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of available disk devices on the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   JSON object
-# ------------------------------------------------------------------------------
-hass.api.host.hardware.gpio() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.hardware ".gpio[]"
-}
-
-# ------------------------------------------------------------------------------
-# Returns a list of available audio devices on the host system
-#
-# Arguments:
-#   None
-# Returns:
-#   JSON object
-# ------------------------------------------------------------------------------
-hass.api.host.hardware.audio() {
-    hass.log.trace "${FUNCNAME[0]}"
-    hass.api.host.hardware ".audio[]"
 }
 
 # ------------------------------------------------------------------------------
@@ -218,7 +178,6 @@ hass.api.host.update() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.call POST /host/update
 }
-
 
 # ------------------------------------------------------------------------------
 # Reload the host controller
