@@ -174,3 +174,108 @@ hass.api.supervisor.logs() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.call GET /supervisor/logs true
 }
+
+# ------------------------------------------------------------------------------
+# List all available stats about the Supervisor
+#
+# Arguments:
+#   $1 jq Filter to apply on the result (optional)
+# Returns:
+#   JSON object
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats() {
+    local filter=${1:-}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call GET /supervisor/stats false "${filter}"
+}
+
+# ------------------------------------------------------------------------------
+# Returns CPU usage from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in percent
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.cpu_percent() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".cpu_percent"
+}
+
+# ------------------------------------------------------------------------------
+# Returns memory usage from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.memory_usage() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".memory_usage"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns memory limit from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.memory_limit() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".memory_limit"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns outgoing network usage from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.network_tx() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".network_tx"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns incoming network usage from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Bytes
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.network_rx() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".network_rx"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns disk read usage from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Blocks
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.blk_read() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".blk_read"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns disk write usage from the Supervisor
+#
+# Arguments:
+#   None
+# Returns:
+#   Usage in Blocks
+# ------------------------------------------------------------------------------
+hass.api.supervisor.stats.blk_write() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.supervisor.stats ".blk_write"    
+}

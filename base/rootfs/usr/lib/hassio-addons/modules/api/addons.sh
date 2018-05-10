@@ -191,20 +191,6 @@ hass.api.addons.info.long_description() {
 }
 
 # ------------------------------------------------------------------------------
-# Returns the version of an add-on
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   Version of the add-on
-# ------------------------------------------------------------------------------
-hass.api.addons.info.version() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".version"
-}
-
-# ------------------------------------------------------------------------------
 # Returns whether or not auto update is enabled for this add-on
 #
 # Arguments:
@@ -219,6 +205,34 @@ hass.api.addons.info.auto_update() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the URL of an add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   URL of the add-on
+# ------------------------------------------------------------------------------
+hass.api.addons.info.url() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".url"
+}
+
+# ------------------------------------------------------------------------------
+# Returns whether or not the add-on is running deattached
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not the add-on is running deattached
+# ------------------------------------------------------------------------------
+hass.api.addons.info.detached() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".detached // false"
+}
+
+# ------------------------------------------------------------------------------
 # Returns the repository slug of an add-on
 #
 # Arguments:
@@ -230,6 +244,20 @@ hass.api.addons.info.repository() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
     hass.api.addons.info "${addon}" ".repository"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the version of an add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Version of the add-on
+# ------------------------------------------------------------------------------
+hass.api.addons.info.version() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".version"
 }
 
 # ------------------------------------------------------------------------------
@@ -275,34 +303,6 @@ hass.api.addons.info.boot() {
 }
 
 # ------------------------------------------------------------------------------
-# Returns the URL of an add-on
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   URL of the add-on
-# ------------------------------------------------------------------------------
-hass.api.addons.info.url() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".url"
-}
-
-# ------------------------------------------------------------------------------
-# Returns whether or not the add-on is running deattached
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   Whether or not the add-on is running deattached
-# ------------------------------------------------------------------------------
-hass.api.addons.info.detached() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".detached // false"
-}
-
-# ------------------------------------------------------------------------------
 # Returns whether or not this add-on is being build locally
 #
 # Arguments:
@@ -314,6 +314,20 @@ hass.api.addons.info.build() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
     hass.api.addons.info "${addon}" ".build // false"
+}
+
+# ------------------------------------------------------------------------------
+# Returns options for this add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   JSON ojbect
+# ------------------------------------------------------------------------------
+hass.api.addons.info.boot() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".options[]"
 }
 
 # ------------------------------------------------------------------------------
@@ -387,6 +401,34 @@ hass.api.addons.info.privileged() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the current seccomp state of this add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Seccomp state: disable, default or profile
+# ------------------------------------------------------------------------------
+hass.api.addons.info.seccomp() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".seccomp"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the current apparmor state of this add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Seccomp state: disable, default or profile
+# ------------------------------------------------------------------------------
+hass.api.addons.info.apparmor() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".apparmor"
+}
+
+# ------------------------------------------------------------------------------
 # Returns a list devices made available to the add-on
 #
 # Arguments:
@@ -412,6 +454,20 @@ hass.api.addons.info.auto_uart() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
     hass.api.addons.info "${addon}" ".auto_uart // false"
+}
+
+# ------------------------------------------------------------------------------
+# Returns whether or not this add-on has a icon available
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on has a icon available
+# ------------------------------------------------------------------------------
+hass.api.addons.info.icon() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".icon // false"
 }
 
 # ------------------------------------------------------------------------------
@@ -443,34 +499,6 @@ hass.api.addons.info.changelog() {
 }
 
 # ------------------------------------------------------------------------------
-# A URL for web interface of this add-on
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   The webui URL of the add-on
-# ------------------------------------------------------------------------------
-hass.api.addons.info.webui() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".webui // empty"
-}
-
-# ------------------------------------------------------------------------------
-# Returns whether or not this add-on can use the STDIN on the Hass.io API
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   Whether or not this add-on can use the STDIN
-# ------------------------------------------------------------------------------
-hass.api.addons.info.stdin() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".stdin // false"
-}
-
-# ------------------------------------------------------------------------------
 # Returns whether or not this add-on can access the Hass.io API
 #
 # Arguments:
@@ -496,6 +524,34 @@ hass.api.addons.info.homeassistant_api() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
     hass.api.addons.info "${addon}" ".homeassistant_api // false"
+}
+
+# ------------------------------------------------------------------------------
+# Returns whether or not this add-on can use the STDIN on the Hass.io API
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on can use the STDIN
+# ------------------------------------------------------------------------------
+hass.api.addons.info.stdin() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".stdin // false"
+}
+
+# ------------------------------------------------------------------------------
+# A URL for web interface of this add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   The webui URL of the add-on
+# ------------------------------------------------------------------------------
+hass.api.addons.info.webui() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".webui // empty"
 }
 
 # ------------------------------------------------------------------------------
@@ -552,6 +608,34 @@ hass.api.addons.info.audio_output() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
     hass.api.addons.info "${addon}" ".audio_output // empty"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the available services for an add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   The available services for this add-on
+# ------------------------------------------------------------------------------
+hass.api.addons.info.services() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".services // empty"
+}
+
+# ------------------------------------------------------------------------------
+# Returns the available discovery items for an add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   The available discovery items for this add-on
+# ------------------------------------------------------------------------------
+hass.api.addons.info.discovery() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".discovery // empty"
 }
 
 # ------------------------------------------------------------------------------
@@ -689,4 +773,117 @@ hass.api.addons.update_available() {
     fi
 
     return "${EX_OK}"
+}
+
+# ------------------------------------------------------------------------------
+# List all available stats about add-ons
+#
+# Arguments:
+#   $1 Add-on slug
+#   $2 jq Filter to apply on the result (optional)
+# Returns:
+#   JSON object
+# ------------------------------------------------------------------------------
+hass.api.addons.stats() {
+    local addon=${1}
+    local filter=${2:-}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call GET GET "/addons/${addon}/logs" false "${filter}"
+}
+
+# ------------------------------------------------------------------------------
+# Returns CPU usage from add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in percent
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.cpu_percent() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".cpu_percent"
+}
+
+# ------------------------------------------------------------------------------
+# Returns memory usage from add-on
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.memory_usage() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".memory_usage"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns memory limit from add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.memory_limit() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".memory_limit"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns outgoing network usage from add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in Mb
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.network_tx() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".network_tx"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns incoming network usage from add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in Bytes
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.network_rx() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".network_rx"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns disk read usage from add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in Blocks
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.blk_read() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".blk_read"    
+}
+
+# ------------------------------------------------------------------------------
+# Returns disk write usage from add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Usage in Blocks
+# ------------------------------------------------------------------------------
+hass.api.addons.stats.blk_write() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.stats "${addon}" ".blk_write"    
 }

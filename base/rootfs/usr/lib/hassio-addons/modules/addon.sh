@@ -2,7 +2,8 @@
 # ==============================================================================
 # Community Hass.io Add-ons: Bash functions library
 #
-# Provides functions for reading the add-on configuration
+# Provides basic functions for reading the current add-on configuration.
+# For more advances options, use the hass.addons.* functions
 # ==============================================================================
 
 # ==============================================================================
