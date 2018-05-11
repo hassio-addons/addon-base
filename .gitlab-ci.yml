@@ -50,7 +50,7 @@ stages:
         --volume "$PWD":/docker \
         hassioaddons/build-env:latest \
           --image "addon" \
-          --no-cache
+          --no-cache \
           --git-url "https://github.com/${ADDON_GITHUB_REPO}" \
           --target "${ADDON_TARGET}" \
           --tag-latest \
