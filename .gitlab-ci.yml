@@ -50,8 +50,7 @@ stages:
         --volume "$PWD":/docker \
         hassioaddons/build-env:latest \
           --image "addon" \
-          --cache-from "${DOCKER_HUB_ORG}/${ADDON_SLUG}-${ADDON_ARCH}" \
-          --cache-tag "test" \
+          --no-cache
           --git-url "https://github.com/${ADDON_GITHUB_REPO}" \
           --target "${ADDON_TARGET}" \
           --tag-latest \
@@ -274,7 +273,7 @@ deploy:armhf:
 deploy:aarch64:
   <<: *deploy
   variables:
-    ADDON_ARCH: armhf
+    ADDON_ARCH: aarch64
   only:
     - master
     - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
@@ -284,7 +283,7 @@ deploy:aarch64:
 deploy:i386:
   <<: *deploy
   variables:
-    ADDON_ARCH: armhf
+    ADDON_ARCH: i386
   only:
     - master
     - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
@@ -294,7 +293,7 @@ deploy:i386:
 deploy:amd64:
   <<: *deploy
   variables:
-    ADDON_ARCH: armhf
+    ADDON_ARCH: amd64
   only:
     - master
     - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
