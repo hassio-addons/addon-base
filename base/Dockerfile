@@ -18,7 +18,14 @@ COPY rootfs /
 ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3018
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
+    && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
+    && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
+    \
+    && apk add --upgrade --no-cache \
+        apk-tools@edge=2.9.1-r3 \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
         tar=1.29-r1 \
     \
     && apk add --no-cache \
