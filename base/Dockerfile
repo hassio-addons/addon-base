@@ -26,6 +26,7 @@ RUN \
         tar=1.29-r1 \
     \
     && apk add --no-cache \
+        apk-tools=2.9.1-r2 \
         bash=4.4.19-r1 \
         ca-certificates=20171114-r0 \
         curl=7.59.0-r0 \
