@@ -22,9 +22,6 @@ RUN \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     \
-    && apk add --upgrade --no-cache \
-        apk-tools@edge=2.9.1-r3 \
-    \
     && apk add --no-cache --virtual .build-dependencies \
         tar=1.29-r1 \
     \
