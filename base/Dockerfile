@@ -28,6 +28,7 @@ RUN \
     && apk add --no-cache \
         apk-tools=2.9.1-r2 \
         bash=4.4.19-r1 \
+        busybox=1.27.2-r8 \
         ca-certificates=20171114-r0 \
         curl=7.59.0-r0 \
         jq>1.5-r4 \
