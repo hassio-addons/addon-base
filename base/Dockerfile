@@ -32,6 +32,8 @@ RUN \
         ca-certificates=20171114-r0 \
         curl=7.59.0-r0 \
         jq>1.5-r4 \
+        musl-utils=1.1.18-r3 \
+        musl=1.1.18-r3 \
         tzdata=2017c-r0 \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
