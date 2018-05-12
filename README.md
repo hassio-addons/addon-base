@@ -148,8 +148,8 @@ SOFTWARE.
 [amd64-microbadger]: https://microbadger.com/images/hassioaddons/base-amd64
 [amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/base-amd64.svg
 [amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/base-amd64.svg
-[armhf-anchore-shield]: https://anchore.io/service/badges/image/5f06917b27fd112a2b3539dcd7cb542ae50fa5967f2cfa254d8adc8ffeaea2a3
-[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-amd64%3Alatest
+[armhf-anchore-shield]: https://anchore.io/service/badges/image/3723e45cd4af53cd941481ebdd84367f24775b5df040bee378f7cbfba0b8b171
+[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-armhf%3Alatest
 [armhf-arch-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
 [armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/base-armhf
 [armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/base-armhf.svg
