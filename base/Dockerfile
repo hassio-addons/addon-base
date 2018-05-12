@@ -31,7 +31,7 @@ RUN \
         busybox=1.27.2-r8 \
         ca-certificates=20171114-r0 \
         curl=7.59.0-r0 \
-        jq>1.5-r4 \
+        jq=1.5-r5 \
         musl-utils=1.1.18-r3 \
         musl=1.1.18-r3 \
         tzdata=2017c-r0 \
