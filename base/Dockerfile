@@ -30,10 +30,10 @@ RUN \
         busybox=1.28.4-r0 \
         ca-certificates=20171114-r3 \
         curl=7.60.0-r1 \
-        jq=1.5-r5 \
         musl-utils=1.1.18-r3 \
         musl=1.1.18-r3 \
         tzdata=2017c-r0 \
+        jq=1.6_rc1-r1 \
     \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
