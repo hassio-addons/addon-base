@@ -1,3 +1,4 @@
+# shellcheck shell=dash
 ARG BUILD_FROM=alpine:3.8
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
@@ -40,7 +41,7 @@ RUN \
         musl=1.1.19-r10 \
         tzdata=2018d-r1 \
     \
-    && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
+    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
     && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-${S6_ARCH}.tar.gz" \
         | tar zxvf - -C / \
