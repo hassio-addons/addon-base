@@ -15,7 +15,6 @@ ENV \
 COPY rootfs /
 
 # Set shell
-# shellcheck shell=dash
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Install base system
