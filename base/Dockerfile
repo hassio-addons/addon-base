@@ -44,17 +44,6 @@ RUN \
     && mkdir -p /etc/services.d \
     \
     && apk del --purge .build-dependencies \
-    \
-    && \
-        if [[ "${BUILD_ARCH}" != "armhf" ]]; then \
-            rm -f /usr/bin/qemu-arm-static; \
-        fi \
-    \
-    && \
-        if [[ "${BUILD_ARCH}" != "aarch64" ]]; then \
-            rm -f /usr/bin/qemu-aarch64-static; \
-        fi \
-    \
     && rm -f -r \
         /tmp/*
 
