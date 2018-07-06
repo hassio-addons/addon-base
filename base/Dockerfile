@@ -25,7 +25,7 @@ RUN \
         tar=1.30-r0 \
     \
     && apk add --no-cache \
-        apk-tools=2.9.1-r2 \
+        apk-tools=2.10.0-r0 \
         bash=4.4.19-r1 \
         busybox=1.27.2-r10 \
         ca-certificates=20171114-r0 \
