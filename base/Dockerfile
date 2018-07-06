@@ -1,4 +1,3 @@
-# shellcheck shell=dash
 ARG BUILD_FROM=alpine:3.8
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
@@ -16,6 +15,7 @@ ENV \
 COPY rootfs /
 
 # Set shell
+# shellcheck shell=dash
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Install base system
