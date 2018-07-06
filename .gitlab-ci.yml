@@ -225,7 +225,7 @@ stages:
 # Preflight jobs
 hadolint:
   <<: *preflight
-  image: hadolint/hadolint:v1.9.0-debian
+  image: hadolint/hadolint:latest-debian
   before_script:
     - hadolint --version
   script:
