@@ -14,10 +14,15 @@ ENV \
 # Copy root filesystem
 COPY rootfs /
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # Install base system
 ARG BUILD_ARCH=amd64
 RUN \
-    echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
+    set -o pipefail \
+    \
+    && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     \
@@ -48,7 +53,7 @@ RUN \
         /tmp/*
 
 # Entrypoint & CMD
-ENTRYPOINT [ "/init" ]
+ENTRYPOINT ["/init"]
 
 # Build arugments
 ARG BUILD_DATE
