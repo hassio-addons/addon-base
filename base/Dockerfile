@@ -27,8 +27,8 @@ RUN \
     && apk add --no-cache \
         apk-tools=2.10.0-r0 \
         bash=4.4.19-r1 \
-        busybox=1.27.2-r10 \
         ca-certificates=20171114-r0 \
+        busybox=1.28.4-r0 \
         curl=7.60.0-r1 \
         jq=1.5-r5 \
         musl-utils=1.1.18-r3 \
