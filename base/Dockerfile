@@ -14,10 +14,15 @@ ENV \
 # Copy root filesystem
 COPY rootfs /
 
+# Set shell
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
+
 # Install base system
 ARG BUILD_ARCH=amd64
 RUN \
-    echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
+    set -o pipefail \
+    \
+    && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     \
@@ -35,7 +40,7 @@ RUN \
         musl=1.1.19-r10 \
         tzdata=2018d-r1 \
     \
-    && if [[ "${BUILD_ARCH}" = "i386" ]]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
+    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
     && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-${S6_ARCH}.tar.gz" \
         | tar zxvf - -C / \
@@ -44,22 +49,11 @@ RUN \
     && mkdir -p /etc/services.d \
     \
     && apk del --purge .build-dependencies \
-    \
-    && \
-        if [[ "${BUILD_ARCH}" != "armhf" ]]; then \
-            rm -f /usr/bin/qemu-arm-static; \
-        fi \
-    \
-    && \
-        if [[ "${BUILD_ARCH}" != "aarch64" ]]; then \
-            rm -f /usr/bin/qemu-aarch64-static; \
-        fi \
-    \
     && rm -f -r \
         /tmp/*
 
 # Entrypoint & CMD
-ENTRYPOINT [ "/init" ]
+ENTRYPOINT ["/init"]
 
 # Build arugments
 ARG BUILD_DATE
