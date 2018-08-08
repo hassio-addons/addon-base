@@ -72,8 +72,8 @@ hass.api.call() {
 
     hass.log.debug "Requested API resource: ${HASS_API_ENDPOINT}${resource}"
     hass.log.debug "API HTTP Response code: ${status}"
-    hass.log.debug "API Response: ${response}" 
-    
+    hass.log.debug "API Response: ${response}"
+
     if [[ "${status}" -eq 401 ]]; then
         hass.log.error "Unable to authenticate with the API, permission denied"
         return "${EX_NOK}"

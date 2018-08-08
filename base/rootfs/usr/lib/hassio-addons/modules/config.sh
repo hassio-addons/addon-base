@@ -30,6 +30,11 @@ hass.config.get() {
         return "${EX_OK}"
     fi
 
+    if hass.config.is_secret "${key}"; then
+        hass.config.get_secret "${key}"
+        return "${EX_OK}"
+    fi
+
     if hass.jq.is_string "${ADDON_CONFIG_PATH}" ".${key}"; then
         hass.jq "${ADDON_CONFIG_PATH}" ".${key} // empty"
         return "${EX_OK}"
@@ -53,13 +58,49 @@ hass.config.get() {
         fi
         return "${EX_OK}"
     fi
-    
+
     if hass.jq.is_number "${ADDON_CONFIG_PATH}" ".${key}"; then
         hass.jq "${ADDON_CONFIG_PATH}" ".${key}"
         return "${EX_OK}"
     fi
-    
+
     return "${EX_NOK}"
+}
+
+# ------------------------------------------------------------------------------
+# Gets a configuration option value by getting it from secrets.yaml
+#
+# Arguments:
+#   $1 Key of the config option
+# Returns:
+#   Value of the key in the referenced to the secrets file
+# ------------------------------------------------------------------------------
+hass.config.get_secret() {
+    local key=${1}
+    local secret
+    local value
+
+    hass.log.trace "${FUNCNAME[0]}:" "$@"
+
+    if ! hass.file_exists "/config/secrets.yaml"; then
+        hass.die "A secret was requested, but could not find a secrets.yaml"
+    fi
+
+    if ! hass.config.is_secret "${key}"; then
+        hass.die "The requested secret does not reference the secrets.yaml"
+    fi
+
+    secret=$(hass.jq "${ADDON_CONFIG_PATH}" ".${key} // empty")
+    secret="${secret#'!secret '}"
+
+    value=$(yq read "/config/secrets.yaml" "${secret}" )
+
+    if [[ "${value}" = "null" ]]; then
+        hass.die "Secret ${secret} not found in secrets.yaml file."
+    fi
+
+    echo "${value}"
+    return "${EX_OK}"
 }
 
 # ------------------------------------------------------------------------------
@@ -144,4 +185,29 @@ hass.config.false() {
     fi
 
     return "${EX_NOK}"
+}
+
+# ------------------------------------------------------------------------------
+# Checks if a configuration option is refering to a secret
+#
+# Arguments:
+#   $1 Key of the config option
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.config.is_secret() {
+    local key=${1}
+    hass.log.trace "${FUNCNAME[0]}:" "$@"
+
+    if ! hass.jq.is_string "${ADDON_CONFIG_PATH}" ".${key}"; then
+        return "${EX_NOK}"
+    fi
+
+    if [[
+        "$(hass.jq "${ADDON_CONFIG_PATH}" ".${key} // empty")" != '!secret '*
+    ]]; then
+        return "${EX_NOK}"
+    fi
+
+    return "${EX_OK}"
 }
