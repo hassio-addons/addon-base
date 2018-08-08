@@ -33,6 +33,8 @@ source "${__LIB_DIR}/modules/config.sh"
 source "${__LIB_DIR}/modules/jq.sh"
 #shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/log.sh
 source "${__LIB_DIR}/modules/log.sh"
+#shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/pwned.sh
+source "${__LIB_DIR}/modules/pwned.sh"
 #shellcheck source=base/rootfs/usr/lib/hassio-addons/modules/string.sh
 source "${__LIB_DIR}/modules/string.sh"
 
