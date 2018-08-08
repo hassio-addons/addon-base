@@ -82,6 +82,10 @@ hass.config.get_secret() {
 
     hass.log.trace "${FUNCNAME[0]}:" "$@"
 
+    if ! hass.directory_exists "/config"; then
+        hass.die "This add-on does not support secrets!"
+    fi
+
     if ! hass.file_exists "/config/secrets.yaml"; then
         hass.die "A secret was requested, but could not find a secrets.yaml"
     fi
