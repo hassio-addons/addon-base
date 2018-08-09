@@ -108,6 +108,41 @@ hass.config.get_secret() {
 }
 
 # ------------------------------------------------------------------------------
+# Checks if a password is safe to use, using IHaveBeenPwned
+#
+# Arguments:
+#   $1 Key of the config option
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.config.is_safe_password() {
+    local key=${1}
+    local password
+
+    hass.log.trace "${FUNCNAME[0]}:" "$@"
+
+    # If the password is safe, we'll accept it anyways.
+    password=$(hass.config.get "${key}")
+    if hass.pwned.is_safe_password "${password}"; then
+        return "${EX_OK}"
+    fi
+
+    # If the bypass is not configured, we'll fail.
+    if ! hass.config.exists "i_like_to_be_pwned"; then
+        return "${EX_NOK}"
+    fi
+
+    # If the bypass is enabled, we'll return OK.
+    if hass.config.true "i_like_to_be_pwned"; then
+        hass.log.warning "Have I Been Pwned bypass enabled."
+        return "${EX_OK}"
+    fi
+
+    # If we reach this point, we'll just fail.
+    return "${EX_NOK}"
+}
+
+# ------------------------------------------------------------------------------
 # Checks if a configuration option exists in the config file
 #
 # Arguments:
