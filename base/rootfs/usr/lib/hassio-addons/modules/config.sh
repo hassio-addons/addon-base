@@ -83,15 +83,18 @@ hass.config.get_secret() {
     hass.log.trace "${FUNCNAME[0]}:" "$@"
 
     if ! hass.directory_exists "/config"; then
-        hass.die "This add-on does not support secrets!"
+        hass.log.error "This add-on does not support secrets!"
+        return "${EX_NOK}"
     fi
 
     if ! hass.file_exists "/config/secrets.yaml"; then
-        hass.die "A secret was requested, but could not find a secrets.yaml"
+        hass.log.error "A secret was requested, but could not find a secrets.yaml"
+        return "${EX_NOK}"
     fi
 
     if ! hass.config.is_secret "${key}"; then
-        hass.die "The requested secret does not reference the secrets.yaml"
+        hass.log.error "The requested secret does not reference the secrets.yaml"
+        return "${EX_NOK}"
     fi
 
     secret=$(hass.jq "${ADDON_CONFIG_PATH}" ".${key} // empty")
@@ -100,7 +103,8 @@ hass.config.get_secret() {
     value=$(yq read "/config/secrets.yaml" "${secret}" )
 
     if [[ "${value}" = "null" ]]; then
-        hass.die "Secret ${secret} not found in secrets.yaml file."
+        hass.log.error "Secret ${secret} not found in secrets.yaml file."
+        return "${EX_NOK}"
     fi
 
     echo "${value}"
@@ -158,6 +162,11 @@ hass.config.exists() {
         return "${EX_NOK}"
     fi
 
+    if hass.config.is_secret "${key}" && ! hass.config.get_secret "${key}";
+    then
+        return "${EX_NOK}"
+    fi
+
     return "${EX_OK}"
 }
 
@@ -171,10 +180,23 @@ hass.config.exists() {
 # ------------------------------------------------------------------------------
 hass.config.has_value() {
     local key=${1}
+    local value
     hass.log.trace "${FUNCNAME[0]}:" "$@"
 
     if ! hass.jq.has_value "${ADDON_CONFIG_PATH}" ".${key}"; then
         return "${EX_NOK}"
+    fi
+
+    if hass.config.is_secret "${key}"; then
+        # Could not retrieve secret
+        if ! value=$(hass.config.get_secret "${key}"); then
+            return "${EX_NOK}"
+        fi
+
+        # Resolved secret does not contain a value
+        if ! hass.has_value "${value}"; then
+            return "${EX_NOK}"
+        fi
     fi
 
     return "${EX_OK}"
