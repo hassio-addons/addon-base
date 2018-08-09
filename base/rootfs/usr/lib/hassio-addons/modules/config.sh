@@ -54,7 +54,7 @@ hass.config.get() {
 
     if hass.jq.is_object "${ADDON_CONFIG_PATH}" ".${key}"; then
         if hass.jq.has_value "${ADDON_CONFIG_PATH}" ".${key}"; then
-            hass.jq "${ADDON_CONFIG_PATH}" ".${key}{}"
+            hass.jq "${ADDON_CONFIG_PATH}" ".${key}[]"
         fi
         return "${EX_OK}"
     fi
