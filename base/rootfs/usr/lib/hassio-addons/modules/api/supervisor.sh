@@ -59,16 +59,16 @@ hass.api.supervisor.info.last_version() {
 }
 
 # ------------------------------------------------------------------------------
-# Returns whether or not the Supervisor is on the beta channel
+# Returns the stability channel of the setup.
 #
 # Arguments:
 #   None
 # Returns:
-#   Whether or not the Supervisor is on the beta channel
+#   The currently in use stability channel
 # ------------------------------------------------------------------------------
-hass.api.supervisor.info.beta_channel() { 
+hass.api.supervisor.info.channel() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.info ".beta_channel // false"
+    hass.api.supervisor.info ".channel // false"
 }
 
 # ------------------------------------------------------------------------------
@@ -212,7 +212,7 @@ hass.api.supervisor.stats.cpu_percent() {
 # ------------------------------------------------------------------------------
 hass.api.supervisor.stats.memory_usage() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.stats ".memory_usage"    
+    hass.api.supervisor.stats ".memory_usage"
 }
 
 # ------------------------------------------------------------------------------
@@ -225,7 +225,7 @@ hass.api.supervisor.stats.memory_usage() {
 # ------------------------------------------------------------------------------
 hass.api.supervisor.stats.memory_limit() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.stats ".memory_limit"    
+    hass.api.supervisor.stats ".memory_limit"
 }
 
 # ------------------------------------------------------------------------------
@@ -238,7 +238,7 @@ hass.api.supervisor.stats.memory_limit() {
 # ------------------------------------------------------------------------------
 hass.api.supervisor.stats.network_tx() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.stats ".network_tx"    
+    hass.api.supervisor.stats ".network_tx"
 }
 
 # ------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ hass.api.supervisor.stats.network_tx() {
 # ------------------------------------------------------------------------------
 hass.api.supervisor.stats.network_rx() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.stats ".network_rx"    
+    hass.api.supervisor.stats ".network_rx"
 }
 
 # ------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ hass.api.supervisor.stats.network_rx() {
 # ------------------------------------------------------------------------------
 hass.api.supervisor.stats.blk_read() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.stats ".blk_read"    
+    hass.api.supervisor.stats ".blk_read"
 }
 
 # ------------------------------------------------------------------------------
@@ -277,5 +277,5 @@ hass.api.supervisor.stats.blk_read() {
 # ------------------------------------------------------------------------------
 hass.api.supervisor.stats.blk_write() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.supervisor.stats ".blk_write"    
+    hass.api.supervisor.stats ".blk_write"
 }
