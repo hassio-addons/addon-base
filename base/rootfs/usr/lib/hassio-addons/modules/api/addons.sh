@@ -401,20 +401,6 @@ hass.api.addons.info.privileged() {
 }
 
 # ------------------------------------------------------------------------------
-# Returns the current seccomp state of this add-on
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   Seccomp state: disable, default or profile
-# ------------------------------------------------------------------------------
-hass.api.addons.info.seccomp() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.info "${addon}" ".seccomp"
-}
-
-# ------------------------------------------------------------------------------
 # Returns the current apparmor state of this add-on
 #
 # Arguments:
@@ -569,6 +555,34 @@ hass.api.addons.info.gpio() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns whether or not this add-on can access the devicetree
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on can access the devicetree
+# ------------------------------------------------------------------------------
+hass.api.addons.info.devicetree() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".devicetree // false"
+}
+
+# ------------------------------------------------------------------------------
+# Returns whether or not this add-on can access the Docker socket
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   Whether or not this add-on can access the Docker socket
+# ------------------------------------------------------------------------------
+hass.api.addons.info.docker_api() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.addons.info "${addon}" ".docker_api // false"
+}
+
+# ------------------------------------------------------------------------------
 # Returns whether or not this add-on can access an audio device
 #
 # Arguments:
@@ -639,34 +653,6 @@ hass.api.addons.info.discovery() {
 }
 
 # ------------------------------------------------------------------------------
-# Install an add-on onto your Hass.io instance
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-hass.api.addons.install() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.call POST "/addons/${addon}/install"
-}
-
-# ------------------------------------------------------------------------------
-# Uninstall an add-on from your Hass.io instance
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-hass.api.addons.uninstall() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.call POST "/addons/${addon}/uninstall"
-}
-
-# ------------------------------------------------------------------------------
 # Starts an add-on
 #
 # Arguments:
@@ -695,17 +681,31 @@ hass.api.addons.stop() {
 }
 
 # ------------------------------------------------------------------------------
-# Restarts an add-on
+# Install an add-on onto your Hass.io instance
 #
 # Arguments:
 #   $1 Add-on slug
 # Returns:
 #   None
 # ------------------------------------------------------------------------------
-hass.api.addons.restart() {
+hass.api.addons.install() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.call POST "/addons/${addon}/restart"
+    hass.api.call POST "/addons/${addon}/install"
+}
+
+# ------------------------------------------------------------------------------
+# Uninstall an add-on from your Hass.io instance
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.addons.uninstall() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call POST "/addons/${addon}/uninstall"
 }
 
 # ------------------------------------------------------------------------------
@@ -723,20 +723,6 @@ hass.api.addons.update() {
 }
 
 # ------------------------------------------------------------------------------
-# Rebuilds an add-on locally
-#
-# Arguments:
-#   $1 Add-on slug
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-hass.api.addons.rebuild() {
-    local addon=${1}
-    hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.call POST "/addons/${addon}/rebuild"
-}
-
-# ------------------------------------------------------------------------------
 # Returns the logs created by an add-on
 #
 # Arguments:
@@ -748,6 +734,34 @@ hass.api.addons.logs() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.call GET "/addons/${addon}/logs" true
+}
+
+# ------------------------------------------------------------------------------
+# Restarts an add-on
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.addons.restart() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call POST "/addons/${addon}/restart"
+}
+
+# ------------------------------------------------------------------------------
+# Rebuilds an add-on locally
+#
+# Arguments:
+#   $1 Add-on slug
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.addons.rebuild() {
+    local addon=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call POST "/addons/${addon}/rebuild"
 }
 
 # ------------------------------------------------------------------------------
@@ -815,7 +829,7 @@ hass.api.addons.stats.cpu_percent() {
 hass.api.addons.stats.memory_usage() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.stats "${addon}" ".memory_usage"    
+    hass.api.addons.stats "${addon}" ".memory_usage"
 }
 
 # ------------------------------------------------------------------------------
@@ -829,7 +843,7 @@ hass.api.addons.stats.memory_usage() {
 hass.api.addons.stats.memory_limit() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.stats "${addon}" ".memory_limit"    
+    hass.api.addons.stats "${addon}" ".memory_limit"
 }
 
 # ------------------------------------------------------------------------------
@@ -843,7 +857,7 @@ hass.api.addons.stats.memory_limit() {
 hass.api.addons.stats.network_tx() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.stats "${addon}" ".network_tx"    
+    hass.api.addons.stats "${addon}" ".network_tx"
 }
 
 # ------------------------------------------------------------------------------
@@ -857,7 +871,7 @@ hass.api.addons.stats.network_tx() {
 hass.api.addons.stats.network_rx() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.stats "${addon}" ".network_rx"    
+    hass.api.addons.stats "${addon}" ".network_rx"
 }
 
 # ------------------------------------------------------------------------------
@@ -871,7 +885,7 @@ hass.api.addons.stats.network_rx() {
 hass.api.addons.stats.blk_read() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.stats "${addon}" ".blk_read"    
+    hass.api.addons.stats "${addon}" ".blk_read"
 }
 
 # ------------------------------------------------------------------------------
@@ -885,5 +899,5 @@ hass.api.addons.stats.blk_read() {
 hass.api.addons.stats.blk_write() {
     local addon=${1}
     hass.log.trace "${FUNCNAME[0]}" "$@"
-    hass.api.addons.stats "${addon}" ".blk_write"    
+    hass.api.addons.stats "${addon}" ".blk_write"
 }

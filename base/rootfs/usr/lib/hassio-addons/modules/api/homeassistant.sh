@@ -50,6 +50,19 @@ hass.api.homeassistant.info.last_version() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the machine info runningHome Assistant
+#
+# Arguments:
+#   None
+# Returns:
+#   Machine
+# ------------------------------------------------------------------------------
+hass.api.homeassistant.info.machine() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.homeassistant.info ".machine"
+}
+
+# ------------------------------------------------------------------------------
 # Returns the Docker image of Home Assistant
 #
 # Arguments:
@@ -254,7 +267,7 @@ hass.api.homeassistant.stats.cpu_percent() {
 # ------------------------------------------------------------------------------
 hass.api.homeassistant.stats.memory_usage() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.stats ".memory_usage"    
+    hass.api.homeassistant.stats ".memory_usage"
 }
 
 # ------------------------------------------------------------------------------
@@ -267,7 +280,7 @@ hass.api.homeassistant.stats.memory_usage() {
 # ------------------------------------------------------------------------------
 hass.api.homeassistant.stats.memory_limit() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.stats ".memory_limit"    
+    hass.api.homeassistant.stats ".memory_limit"
 }
 
 # ------------------------------------------------------------------------------
@@ -280,7 +293,7 @@ hass.api.homeassistant.stats.memory_limit() {
 # ------------------------------------------------------------------------------
 hass.api.homeassistant.stats.network_tx() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.stats ".network_tx"    
+    hass.api.homeassistant.stats ".network_tx"
 }
 
 # ------------------------------------------------------------------------------
@@ -293,7 +306,7 @@ hass.api.homeassistant.stats.network_tx() {
 # ------------------------------------------------------------------------------
 hass.api.homeassistant.stats.network_rx() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.stats ".network_rx"    
+    hass.api.homeassistant.stats ".network_rx"
 }
 
 # ------------------------------------------------------------------------------
@@ -306,7 +319,7 @@ hass.api.homeassistant.stats.network_rx() {
 # ------------------------------------------------------------------------------
 hass.api.homeassistant.stats.blk_read() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.stats ".blk_read"    
+    hass.api.homeassistant.stats ".blk_read"
 }
 
 # ------------------------------------------------------------------------------
@@ -319,5 +332,5 @@ hass.api.homeassistant.stats.blk_read() {
 # ------------------------------------------------------------------------------
 hass.api.homeassistant.stats.blk_write() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.homeassistant.stats ".blk_write"    
+    hass.api.homeassistant.stats ".blk_write"
 }

@@ -115,6 +115,19 @@ hass.api.host.info.deployment() {
 }
 
 # ------------------------------------------------------------------------------
+# Returns the cpe of the system
+#
+# Arguments:
+#   None
+# Returns:
+#   Version
+# ------------------------------------------------------------------------------
+hass.api.host.info.deployment() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.host.info ".cpe"
+}
+
+# ------------------------------------------------------------------------------
 # Returns the version of the software running on the host
 #
 # Arguments:
@@ -190,4 +203,59 @@ hass.api.host.update() {
 hass.api.host.reload() {
     hass.log.trace "${FUNCNAME[0]}"
     hass.api.call POST /host/reload
+}
+
+# ------------------------------------------------------------------------------
+# Returns host services
+#
+# Arguments:
+#   None
+# Returns:
+#   List of host services.
+# ------------------------------------------------------------------------------
+hass.api.host.services() {
+    hass.log.trace "${FUNCNAME[0]}"
+    hass.api.call GET /host/services false ".services[]"
+}
+
+# ------------------------------------------------------------------------------
+# Stops a host service
+#
+# Arguments:
+#   $1 unit name
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.host.service.stop() {
+    local unit=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call POST "/host/service/${unit}/stop"
+}
+
+# ------------------------------------------------------------------------------
+# Starts a host service
+#
+# Arguments:
+#   $1 unit name
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.host.service.start() {
+    local unit=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call POST "/host/service/${unit}/start"
+}
+
+# ------------------------------------------------------------------------------
+# Reloads a host service
+#
+# Arguments:
+#   $1 unit name
+# Returns:
+#   None
+# ------------------------------------------------------------------------------
+hass.api.host.service.reload() {
+    local unit=${1}
+    hass.log.trace "${FUNCNAME[0]}" "$@"
+    hass.api.call POST "/host/service/${unit}/reload"
 }
