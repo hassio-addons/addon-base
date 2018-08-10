@@ -80,6 +80,12 @@ function hass.pwned.call() {
 
     hass.log.trace "${FUNCNAME[0]}" "${password//./x}"
 
+    # Do not check empty password
+    if ! hass.has_value "${password}"; then
+        hass.log.warning 'Cannot check empty password against HaveIBeenPwned.'
+        return "${EX_OK}"
+    fi
+
     # Has the password
     password=$(echo -n "${password}" \
         | sha1sum \
