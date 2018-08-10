@@ -162,7 +162,8 @@ hass.config.exists() {
         return "${EX_NOK}"
     fi
 
-    if hass.config.is_secret "${key}" && ! hass.config.get_secret "${key}";
+    if hass.config.is_secret "${key}" \
+        && ! hass.config.get_secret "${key}" > /dev/null;
     then
         return "${EX_NOK}"
     fi
