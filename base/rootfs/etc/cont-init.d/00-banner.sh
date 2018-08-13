@@ -15,7 +15,8 @@ if hass.api.supervisor.ping; then
     echo " From: $(hass.addon.repository)"
     echo " By: $(hass.addon.maintainer)"
     echo '-----------------------------------------------------------'
-    echo -n "$(hass.api.host.info.operating_system)" && \
+    echo -n " $(hass.api.supervisor.info.arch)" && \
+    echo -n " / $(hass.api.host.info.operating_system)" && \
     echo -n " / HA $(hass.api.homeassistant.info.version)" && \
     echo -n " / SU $(hass.api.supervisor.info.version)"
     echo " / $(hass.api.supervisor.info.channel)"
