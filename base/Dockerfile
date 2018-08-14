@@ -73,7 +73,7 @@ LABEL \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Addon base for ${BUILD_ARCH}" \
     org.label-schema.schema-version="1.0" \
-    org.label-schema.url="http://addons.community" \
+    org.label-schema.url="https://addons.community" \
     org.label-schema.usage="https://github.com/hassio-addons/addon-base/blob/master/README.md" \
     org.label-schema.vcs-ref=${REF} \
     org.label-schema.vcs-url="https://github.com/hassio-addons/addon-base" \
