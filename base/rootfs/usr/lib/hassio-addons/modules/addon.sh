@@ -20,7 +20,7 @@
 # ------------------------------------------------------------------------------
 hass.addon.name() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.addons.info.name "$(hass.addon.slug)"
+    hass.api.addons.info.name "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ hass.addon.slug() {
 # ------------------------------------------------------------------------------
 hass.addon.description() {
     hass.log.trace "${FUNCNAME[0]}"
-    hass.api.addons.info.description "$(hass.addon.slug)"
+    hass.api.addons.info.description "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ hass.addon.description() {
 hass.addon.repository() {
     local slug
     hass.log.trace "${FUNCNAME[0]}"
-    slug=$(hass.api.addons.info.repository "$(hass.addon.slug)")
+    slug=$(hass.api.addons.info.repository "self")
     hass.api.addons.repositories.info.name "${slug}"
 }
 
@@ -77,7 +77,7 @@ hass.addon.repository() {
 hass.addon.maintainer() {
     local slug
     hass.log.trace "${FUNCNAME[0]}"
-    slug=$(hass.api.addons.info.repository "$(hass.addon.slug)")
+    slug=$(hass.api.addons.info.repository "self")
     hass.api.addons.repositories.info.maintainer "${slug}"
 }
 
@@ -90,7 +90,7 @@ hass.addon.maintainer() {
 #   Version of the current Add-on running
 # ------------------------------------------------------------------------------
 hass.addon.version() {
-    hass.api.addons.info.version "$(hass.addon.slug)"
+    hass.api.addons.info.version "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ hass.addon.version() {
 #   Latest version of the current Add-on running
 # ------------------------------------------------------------------------------
 hass.addon.last_version() {
-    hass.api.addons.info.last_version "$(hass.addon.slug)"
+    hass.api.addons.info.last_version "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ hass.addon.last_version() {
 #   None
 # ------------------------------------------------------------------------------
 hass.addon.restart() {
-    hass.api.addons.restart "$(hass.addon.slug)"
+    hass.api.addons.restart "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ hass.addon.restart() {
 #   None
 # ------------------------------------------------------------------------------
 hass.addon.stop() {
-    hass.api.addons.stop "$(hass.addon.slug)"
+    hass.api.addons.stop "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -138,7 +138,7 @@ hass.addon.stop() {
 #   None
 # ------------------------------------------------------------------------------
 hass.addon.update() {
-    hass.api.addons.update "$(hass.addon.slug)"
+    hass.api.addons.update "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -150,7 +150,7 @@ hass.addon.update() {
 #   None
 # ------------------------------------------------------------------------------
 hass.addon.rebuild() {
-    hass.api.addons.rebuild "$(hass.addon.slug)"
+    hass.api.addons.rebuild "self"
 }
 
 # ------------------------------------------------------------------------------
@@ -162,5 +162,5 @@ hass.addon.rebuild() {
 #   None
 # ------------------------------------------------------------------------------
 hass.addon.update_available() {
-    hass.api.addons.update_available "$(hass.addon.slug)"
+    hass.api.addons.update_available "self"
 }
