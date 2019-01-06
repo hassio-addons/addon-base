@@ -38,25 +38,21 @@ repository contain some extras:
 [![Docker Version][armhf-version-shield]][armhf-microbadger]
 [![Docker Layers][armhf-layers-shield]][armhf-microbadger]
 [![Docker Pulls][armhf-pulls-shield]][armhf-dockerhub]
-[![Anchore Image Overview][armhf-anchore-shield]][armhf-anchore]
 
 [![Docker Architecture][aarch64-arch-shield]][aarch64-dockerhub]
 [![Docker Version][aarch64-version-shield]][aarch64-microbadger]
 [![Docker Layers][aarch64-layers-shield]][aarch64-microbadger]
 [![Docker Pulls][aarch64-pulls-shield]][aarch64-dockerhub]
-[![Anchore Image Overview][aarch64-anchore-shield]][aarch64-anchore]
 
 [![Docker Architecture][amd64-arch-shield]][amd64-dockerhub]
 [![Docker Version][amd64-version-shield]][amd64-microbadger]
 [![Docker Layers][amd64-layers-shield]][amd64-microbadger]
 [![Docker Pulls][amd64-pulls-shield]][amd64-dockerhub]
-[![Anchore Image Overview][amd64-anchore-shield]][amd64-anchore]
 
 [![Docker Architecture][i386-arch-shield]][i386-dockerhub]
 [![Docker Version][i386-version-shield]][i386-microbadger]
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
-[![Anchore Image Overview][i386-anchore-shield]][i386-anchore]
 
 ## Changelog & Releases
 
@@ -135,24 +131,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[aarch64-anchore-shield]: https://anchore.io/service/badges/image/cb97eb5c6d6112657e409a9c467e0207ccd3104b59ead4ff3e0c756a0aee1d47
-[aarch64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-aarch64%3Alatest
 [aarch64-arch-shield]: https://img.shields.io/badge/architecture-aarch64-blue.svg
 [aarch64-dockerhub]: https://hub.docker.com/r/hassioaddons/base-aarch64
 [aarch64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/base-aarch64.svg
 [aarch64-microbadger]: https://microbadger.com/images/hassioaddons/base-aarch64
 [aarch64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/base-aarch64.svg
 [aarch64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/base-aarch64.svg
-[amd64-anchore-shield]: https://anchore.io/service/badges/image/5f06917b27fd112a2b3539dcd7cb542ae50fa5967f2cfa254d8adc8ffeaea2a3
-[amd64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-amd64%3Alatest
 [amd64-arch-shield]: https://img.shields.io/badge/architecture-amd64-blue.svg
 [amd64-dockerhub]: https://hub.docker.com/r/hassioaddons/base-amd64
 [amd64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/base-amd64.svg
 [amd64-microbadger]: https://microbadger.com/images/hassioaddons/base-amd64
 [amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/base-amd64.svg
 [amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/base-amd64.svg
-[armhf-anchore-shield]: https://anchore.io/service/badges/image/3723e45cd4af53cd941481ebdd84367f24775b5df040bee378f7cbfba0b8b171
-[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-armhf%3Alatest
 [armhf-arch-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
 [armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/base-armhf
 [armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/base-armhf.svg
@@ -172,8 +162,6 @@ SOFTWARE.
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-base/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-base/pipelines
-[i386-anchore-shield]: https://anchore.io/service/badges/image/e84714210ab906e08ccc79c951cd8823996c8003dabcc86e18effb9f6d47ed0a
-[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fbase-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/base-i386
 [i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/base-i386.svg
