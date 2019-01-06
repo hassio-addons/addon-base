@@ -55,7 +55,7 @@ hass.api.call() {
 
     hass.log.trace "${FUNCNAME[0]}" "$@"
 
-    if [[ ! -z "${HASSIO_TOKEN:-}" ]]; then
+    if [[ -n "${HASSIO_TOKEN:-}" ]]; then
         auth_header="X-HASSIO-KEY: ${HASSIO_TOKEN}"
     fi
 
