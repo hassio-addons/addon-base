@@ -6,11 +6,11 @@ variables:
   ADDON_SLUG: "base"
   ADDON_TARGET: "base"
 
-  ADDON_ARMV7: "false"
   ADDON_LEGACY_TAGS: "true"
   ADDON_PUBLISH: "false"
 
   ADDON_AARCH64_BASE: "arm64v8/alpine:3.9.2"
   ADDON_AMD64_BASE: "amd64/alpine:3.9.2"
   ADDON_ARMHF_BASE: "arm32v6/alpine:3.9.2"
+  ADDON_ARMV7_BASE: "arm32v7/alpine:3.9.2"
   ADDON_I386_BASE: "i386/alpine:3.9.2"

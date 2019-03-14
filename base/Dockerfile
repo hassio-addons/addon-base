@@ -38,7 +38,9 @@ RUN \
         jq=1.6-r0 \
         tzdata=2018i-r0 \
     \
-    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
+    && S6_ARCH="${BUILD_ARCH}" \
+    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
     \
     && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v1.22.0.0/s6-overlay-${S6_ARCH}.tar.gz" \
         | tar zxvf - -C / \
