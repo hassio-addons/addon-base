@@ -2,10 +2,10 @@
     "image": "hassioaddons/base-{arch}",
     "squash": false,
     "build_from": {
-        "aarch64": "arm64v8/alpine:3.8",
-        "amd64": "amd64/alpine:3.8",
-        "armhf": "arm32v6/alpine:3.8",
-        "i386": "i386/alpine:3.8"
+        "aarch64": "arm64v8/alpine:3.9.2",
+        "amd64": "amd64/alpine:3.9.2",
+        "armhf": "arm32v6/alpine:3.9.2",
+        "i386": "i386/alpine:3.9.2"
     },
     "args": {}
 }
