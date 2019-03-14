@@ -37,11 +37,11 @@ RUN \
         bash=4.4.19-r1 \
         busybox=1.28.4-r3 \
         ca-certificates=20171114-r3 \
-        jq=1.6_rc1-r1 \
         musl-utils=1.1.19-r10 \
         musl=1.1.19-r10 \
         tzdata=2018f-r0 \
         curl=7.64.0-r1 \
+        jq=1.6-r0 \
     \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; else S6_ARCH="${BUILD_ARCH}"; fi \
     \
