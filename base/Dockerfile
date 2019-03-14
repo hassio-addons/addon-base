@@ -33,12 +33,7 @@ RUN \
         tar=1.32-r0 \
     \
     && apk add --no-cache \
-        apk-tools=2.10.1-r0 \
         bash=4.4.19-r1 \
-        busybox=1.28.4-r3 \
-        ca-certificates=20171114-r3 \
-        musl-utils=1.1.19-r10 \
-        musl=1.1.19-r10 \
         curl=7.64.0-r1 \
         jq=1.6-r0 \
         tzdata=2018i-r0 \
