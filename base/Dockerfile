@@ -9,7 +9,7 @@ ENV \
     PS1="$(whoami)@$(hostname):$(pwd)$ " \
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
     S6_CMD_WAIT_FOR_SERVICES=1 \
-    TERM="xterm"
+    TERM="xterm-256color"
 
 # Copy root filesystem
 COPY rootfs /
@@ -47,6 +47,15 @@ RUN \
     \
     && mkdir -p /etc/fix-attrs.d \
     && mkdir -p /etc/services.d \
+    \
+    && curl -J -L -o /tmp/bashio.tar.gz \
+        "https://github.com/hassio-addons/bashio/archive/v0.1.0.tar.gz" \
+    && tar zxvf \
+        /tmp/bashio.tar.gz \
+        --strip 1 -C /tmp \
+    \
+    && mv /tmp/lib /usr/lib/bashio \
+    && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     \
     && apk del --purge .build-dependencies \
     && rm -f -r \

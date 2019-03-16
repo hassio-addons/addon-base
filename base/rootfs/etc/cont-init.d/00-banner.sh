@@ -1,24 +1,37 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Base Images
 # Displays a simple add-on banner on startup
 # ==============================================================================
-# shellcheck source=base/rootfs/usr/lib/hassio-addons/base.sh
-source /usr/lib/hassio-addons/base.sh
+if bashio::supervisor.ping; then
+    bashio::log.blue \
+        '-----------------------------------------------------------'
+    bashio::log.blue " Hass.io Add-on: $(bashio::addon.name)"
+    bashio::log.blue " $(bashio::addon.description)"
+    bashio::log.blue \
+        '-----------------------------------------------------------'
 
-if hass.api.supervisor.ping; then
-    echo '-----------------------------------------------------------'
-    echo " Hass.io Add-on: $(hass.addon.name) v$(hass.addon.version)"
-    echo ''
-    echo " $(hass.addon.description)"
-    echo ''
-    echo " From: $(hass.addon.repository)"
-    echo " By: $(hass.addon.maintainer)"
-    echo '-----------------------------------------------------------'
-    echo -n " $(hass.api.supervisor.info.arch)" && \
-    echo -n " / $(hass.api.host.info.operating_system)" && \
-    echo -n " / HA $(hass.api.homeassistant.info.version)" && \
-    echo -n " / SU $(hass.api.supervisor.info.version)"
-    echo " / $(hass.api.supervisor.info.channel)"
-    echo '-----------------------------------------------------------'
+    bashio::log.blue " Add-on version: $(bashio::addon.version)"
+    if bashio::addon.update_available; then
+        bashio::log.magenta ' There is an update available for this add-on!'
+        bashio::log.magenta \
+            " Latest add-on version: $(bashio::addon.last_version)"
+        bashio::log.magenta ' Please consider upgrading as soon as possible.'
+    else
+        bashio::log.green ' You are running the latest version of this add-on.'
+    fi
+
+    bashio::log.blue " System: $(bashio::host.operating_system)" \
+        " ($(bashio::info.arch) / $(bashio::info.machine))"
+    bashio::log.blue " Home Assistant version: $(bashio::info.homeassistant)"
+    bashio::log.blue " Supervisor version: $(bashio::info.supervisor)"
+
+    bashio::log.blue \
+        '-----------------------------------------------------------'
+    bashio::log.blue \
+        ' Please, share the above information when looking for help'
+    bashio::log.blue \
+        ' or support in e.g, GitHub, forums or the Discord chat.'
+    bashio::log.blue \
+        '-----------------------------------------------------------'
 fi
