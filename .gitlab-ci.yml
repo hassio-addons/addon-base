@@ -8,6 +8,7 @@ variables:
 
   ADDON_LEGACY_TAGS: "true"
   ADDON_PUBLISH: "false"
+  ADDON_QEMU: "true"
 
   ADDON_AARCH64_BASE: "arm64v8/alpine:3.9.2"
   ADDON_AMD64_BASE: "amd64/alpine:3.9.2"
