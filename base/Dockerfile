@@ -34,6 +34,7 @@ RUN \
     \
     && apk add --no-cache \
         musl=1.1.20-r4 \
+        musl-utils=1.1.20-r4 \
     \
     && apk add --no-cache \
         bash=4.4.19-r1 \
