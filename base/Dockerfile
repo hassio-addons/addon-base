@@ -33,6 +33,9 @@ RUN \
         tar=1.32-r0 \
     \
     && apk add --no-cache \
+        musl=1.1.20-r4 \
+    \
+    && apk add --no-cache \
         bash=4.4.19-r1 \
         curl=7.64.0-r1 \
         jq=1.6-r0 \
