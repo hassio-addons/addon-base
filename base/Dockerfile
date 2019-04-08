@@ -55,7 +55,7 @@ RUN \
     && mkdir -p /etc/services.d \
     \
     && curl -J -L -o /tmp/bashio.tar.gz \
-        "https://github.com/hassio-addons/bashio/archive/v0.1.0.tar.gz" \
+        "https://github.com/hassio-addons/bashio/archive/v0.2.0.tar.gz" \
     && tar zxvf \
         /tmp/bashio.tar.gz \
         --strip 1 -C /tmp \
