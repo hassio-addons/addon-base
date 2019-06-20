@@ -33,10 +33,10 @@ RUN \
         tar=1.32-r0 \
     \
     && apk add --no-cache \
-        musl-utils=1.1.20-r4 \
-        musl=1.1.20-r4 \
         libcrypto1.1=1.1.1c-r0 \
         libssl1.1=1.1.1c-r0 \
+        musl-utils=1.1.22-r2 \
+        musl=1.1.22-r2 \
     \
     && apk add --no-cache \
         bash=4.4.19-r1 \
