@@ -40,7 +40,7 @@ RUN \
     \
     && apk add --no-cache \
         bash=5.0.0-r0 \
-        curl=7.65.1-r0 \
+        curl=7.66.0-r0 \
         jq=1.6-r0 \
         tzdata=2019a-r0 \
     \
