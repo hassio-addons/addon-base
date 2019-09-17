@@ -30,7 +30,7 @@ RUN \
         tar=1.32-r0 \
     \
     && apk add --no-cache \
-        libcrypto1.1=1.1.1c-r0 \
+        libcrypto1.1=1.1.1d-r0 \
         libssl1.1=1.1.1c-r0 \
         musl-utils=1.1.22-r3 \
         musl=1.1.22-r3 \
