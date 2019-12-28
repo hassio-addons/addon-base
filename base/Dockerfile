@@ -27,7 +27,7 @@ RUN \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        tar=1.32-r0 \
+        tar=1.32-r1 \
     \
     && apk add --no-cache \
         libcrypto1.1=1.1.1d-r0 \
