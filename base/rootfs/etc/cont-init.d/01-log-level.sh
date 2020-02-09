@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Base Images
+# Community Home Assistant Add-on: Base Images
 # Sets the log level correctly
 # ==============================================================================
 declare log_level

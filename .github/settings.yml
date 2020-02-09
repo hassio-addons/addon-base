@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Docker base images (Alpine) - Community Hass.io Add-on for Home Assistant"
+  description: "Docker base images (Alpine) - Community Home Assistant Add-ons"
   homepage: https://addons.community
-  topics: docker, hassio, hass, baseimage, baseimage-docker, home-automation, home-assistant, alpine
+  topics: docker, baseimage, baseimage-docker, addons, homeassistant, home-assistant, alpine
   private: false
   has_issues: true
   has_projects: false
@@ -46,7 +46,7 @@ labels:
   - name: "Type: Discussion"
     color: d4c5f9
     description: "Marks an issue as a generic discussion ticket."
-  - name: "Type: Maintaince"
+  - name: "Type: Maintenance"
     color: 2af79e
     description: "Generic maintaince tasks, e.g., package updates."
 

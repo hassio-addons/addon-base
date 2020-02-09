@@ -1,12 +1,12 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Base Images
+# Community Home Assistant Add-on: Base Images
 # Displays a simple add-on banner on startup
 # ==============================================================================
 if bashio::supervisor.ping; then
     bashio::log.blue \
         '-----------------------------------------------------------'
-    bashio::log.blue " Hass.io Add-on: $(bashio::addon.name)"
+    bashio::log.blue " Add-on: $(bashio::addon.name)"
     bashio::log.blue " $(bashio::addon.description)"
     bashio::log.blue \
         '-----------------------------------------------------------'
@@ -23,8 +23,8 @@ if bashio::supervisor.ping; then
 
     bashio::log.blue " System: $(bashio::host.operating_system)" \
         " ($(bashio::info.arch) / $(bashio::info.machine))"
-    bashio::log.blue " Home Assistant version: $(bashio::info.homeassistant)"
-    bashio::log.blue " Supervisor version: $(bashio::info.supervisor)"
+    bashio::log.blue " Home Assistant Core: $(bashio::info.homeassistant)"
+    bashio::log.blue " Home Assistant Supervisor: $(bashio::info.supervisor)"
 
     bashio::log.blue \
         '-----------------------------------------------------------'

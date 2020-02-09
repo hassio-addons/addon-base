@@ -1,6 +1,6 @@
 #!/usr/bin/env bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Base Images
+# Community Home Assistant Add-on: Base Images
 # Displays an message right before terminating in case something went wrong
 # ==============================================================================
 if [[ "${S6_STAGE2_EXITED}" -ne 0 ]]; then

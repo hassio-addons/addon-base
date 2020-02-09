@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: Base Images
+# Community Home Assistant Add-on: Base Images
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -21,12 +21,12 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Docker base images used by Community Hass.io Add-ons.
+Docker base images used by Community Home Assistant Add-ons.
 
 ## About
 
-These are the base images used by add-ons created by the Community Hass.io
-Add-ons.
+These are the base images used by add-ons created by the
+Community Home Assistant Add-ons.
 
 While Home Assistant provides base images, the images provided by this
 repository contain some extras:
@@ -34,7 +34,7 @@ repository contain some extras:
 - Adds [s6] as a process supervisor.
 - Adds `jq` & `curl`, since every add-on uses them.
 - Adds Docker [Label Schema][label-schema] support.
-- Includes a Hass.io helper library: [Bashio][bashio]
+- Includes a helper library: [Bashio][bashio]
 - Handles logs, add-on startup banners and update notifications.
 - Several small adjustments and improvements.
 
@@ -58,7 +58,7 @@ Got questions?
 
 You have several options to get them answered:
 
-- The [Community Hass.io Add-ons Discord chat server][discord] for add-on
+- The [Community Home Assistant Add-ons Discord chat server][discord] for add-on
   support and feature requests.
 - The [Home Assistant Discord Chat Server][discord-ha] for general Home
   Assistant discussions and questions.
@@ -84,11 +84,11 @@ The original setup of this repository is by [Franck Nijhof][frenck].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## We have got some Hass.io add-ons for you
+## We have got some Home Assistant add-ons for you
 
-Want some more functionality to your Hass.io Home Assistant instance?
+Want some more functionality to your Home Assistant instance?
 
-We have created multiple add-ons for Hass.io. For a full list, check out
+We have created multiple add-ons for Home Assistant. For a full list, check out
 our [GitHub Repository][repository].
 
 ## License
