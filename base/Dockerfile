@@ -82,7 +82,7 @@ LABEL \
     io.hass.base.name="alpine" \
     io.hass.base.image="hassioaddons/base" \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Community Home Assistant Add-on: ${BUILD_ARCH} Base image" \
+    org.label-schema.description="Home Assistant Community Add-on: ${BUILD_ARCH} Base image" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Addon base for ${BUILD_ARCH}" \
     org.label-schema.schema-version="1.0" \
@@ -90,4 +90,4 @@ LABEL \
     org.label-schema.usage="https://github.com/hassio-addons/addon-base/blob/master/README.md" \
     org.label-schema.vcs-ref=${REF} \
     org.label-schema.vcs-url="https://github.com/hassio-addons/addon-base" \
-    org.label-schema.vendor="Community Home Assistant Add-ons"
+    org.label-schema.vendor="Home Assistant Community Add-ons"

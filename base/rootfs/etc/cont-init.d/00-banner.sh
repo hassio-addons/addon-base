@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: Base Images
+# Home Assistant Community Add-on: Base Images
 # Displays a simple add-on banner on startup
 # ==============================================================================
 if bashio::supervisor.ping; then

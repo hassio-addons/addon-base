@@ -1,4 +1,4 @@
-# Community Home Assistant Add-on: Base Images
+# Home Assistant Community Add-on: Base Images
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -21,12 +21,12 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Docker base images used by Community Home Assistant Add-ons.
+Docker base images used by Home Assistant Community Add-ons.
 
 ## About
 
 These are the base images used by add-ons created by the
-Community Home Assistant Add-ons.
+Home Assistant Community Add-ons.
 
 While Home Assistant provides base images, the images provided by this
 repository contain some extras:
@@ -58,7 +58,7 @@ Got questions?
 
 You have several options to get them answered:
 
-- The [Community Home Assistant Add-ons Discord chat server][discord] for add-on
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
   support and feature requests.
 - The [Home Assistant Discord Chat Server][discord-ha] for general Home
   Assistant discussions and questions.
