@@ -61,7 +61,7 @@ RUN \
     && mv /tmp/bashio/lib /usr/lib/bashio \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     \
-    && apk del --purge .build-dependencies \
+    && apk del --no-cache --purge .build-dependencies \
     && rm -f -r \
         /tmp/*
 
