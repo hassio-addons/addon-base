@@ -15,7 +15,7 @@ if bashio::supervisor.ping; then
     if bashio::addon.update_available; then
         bashio::log.magenta ' There is an update available for this add-on!'
         bashio::log.magenta \
-            " Latest add-on version: $(bashio::addon.last_version)"
+            " Latest add-on version: $(bashio::addon.version_latest)"
         bashio::log.magenta ' Please consider upgrading as soon as possible.'
     else
         bashio::log.green ' You are running the latest version of this add-on.'
