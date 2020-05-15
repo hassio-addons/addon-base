@@ -39,7 +39,7 @@ RUN \
         bash=5.0.11-r1 \
         curl=7.67.0-r0 \
         jq=1.6-r0 \
-        tzdata=2019c-r0 \
+        tzdata=2020a-r0 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; fi \
