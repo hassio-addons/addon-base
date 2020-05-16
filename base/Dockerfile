@@ -75,6 +75,8 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
+    io.hass.name="Addon base for ${BUILD_ARCH}" \
+    io.hass.description="Home Assistant Community Add-on: ${BUILD_ARCH} base image" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="base" \
     io.hass.version=${BUILD_VERSION} \
