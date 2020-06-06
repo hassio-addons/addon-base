@@ -36,7 +36,7 @@ RUN \
         musl=1.1.24-r8 \
     \
     && apk add --no-cache \
-        bash=5.0.11-r1 \
+        bash=5.0.17-r0 \
         curl=7.67.0-r0 \
         jq=1.6-r0 \
         tzdata=2020a-r0 \
