@@ -9,8 +9,8 @@ variables:
   ADDON_PUBLISH: "false"
   ADDON_QEMU: "true"
 
-  ADDON_AARCH64_BASE: "arm64v8/alpine:3.11.6"
-  ADDON_AMD64_BASE: "amd64/alpine:3.11.6"
-  ADDON_ARMHF_BASE: "arm32v6/alpine:3.11.6"
-  ADDON_ARMV7_BASE: "arm32v7/alpine:3.11.6"
-  ADDON_I386_BASE: "i386/alpine:3.11.6"
+  ADDON_AARCH64_BASE: "arm64v8/alpine:3.12.0"
+  ADDON_AMD64_BASE: "amd64/alpine:3.12.0"
+  ADDON_ARMHF_BASE: "arm32v6/alpine:3.12.0"
+  ADDON_ARMV7_BASE: "arm32v7/alpine:3.12.0"
+  ADDON_I386_BASE: "i386/alpine:3.12.0"
