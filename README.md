@@ -121,7 +121,7 @@ SOFTWARE.
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [bashio]: https://github.com/hassio-addons/bashio
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-base.svg
-[commits]: https://github.com/hassio-addons/addon-base/commits/master
+[commits]: https://github.com/hassio-addons/addon-base/commits/main
 [contributors]: https://github.com/hassio-addons/addon-base/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
@@ -131,7 +131,7 @@ SOFTWARE.
 [frenck]: https://github.com/frenck
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-base/badges/master/pipeline.svg
+[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-base/badges/main/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-base/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/hassio-addons/addon-base/issues
