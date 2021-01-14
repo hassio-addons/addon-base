@@ -18,10 +18,10 @@ jobs:
     outputs:
       architectures: ${{ steps.information.outputs.architectures }}
       build: ${{ steps.information.outputs.build }}
+      description: ${{ steps.information.output.description }}
+      name: ${{ steps.information.outputs.name }}
       slug: ${{ steps.information.outputs.slug }}
       target: ${{ steps.information.outputs.target }}
-      name: ${{ steps.information.outputs.name }}
-      description: ${{ steps.information.output.description }}
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2.3.4
@@ -138,13 +138,13 @@ jobs:
       - name: 🏗 Set up QEMU
         uses: docker/setup-qemu-action@v1.0.1
       - name: 🏗 Set up QEMU User Static for aarch64
-        if: ${{ needs.information.outputs.aarch64 == 'true' }}
+        if: ${{ matrix.architecture == 'aarch64' }}
         run: |
           curl -L -s \
             "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-aarch64-static.tar.gz" | \
             tar zxvf - -C "./${ADDON_TARGET}/rootfs/usr/bin/"
       - name: 🏗 Set up QEMU User Static for armhf/armv7
-        if: ${{ needs.information.outputs.armhf == 'true' || needs.information.outputs.armv7 == 'true' }}
+        if: ${{ matrix.architecture == 'armhf' || matrix.architecture = 'armv7' }}
         run: |
           curl -L -s \
             "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-arm-static.tar.gz" | \
