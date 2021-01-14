@@ -18,8 +18,6 @@ jobs:
     outputs:
       architectures: ${{ steps.information.outputs.architectures }}
       build: ${{ steps.information.outputs.build }}
-      description: ${{ steps.information.output.description }}
-      name: ${{ steps.information.outputs.name }}
       slug: ${{ steps.information.outputs.slug }}
       target: ${{ steps.information.outputs.target }}
     steps:
@@ -186,9 +184,7 @@ jobs:
           build-args: |
             BUILD_ARCH=${{ matrix.architecture }}
             BUILD_DATE=${{ steps.flags.outputs.date }}
-            BUILD_DESCRIPTION=${{ needs.information.outputs.description }}
             BUILD_FROM=${{ steps.flags.outputs.from }}
-            BUILD_NAME=${{ needs.information.outputs.name }}
             BUILD_REF=${{ github.sha }}
             BUILD_REPOSITORY=${{ github.repository }}
             BUILD_VERSION=dev
