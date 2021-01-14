@@ -26,6 +26,9 @@
 - name: "ci"
   color: 1d76db
   description: "Work that improves the continue integration."
+- name: "dependencies"
+  color: 1d76db
+  description: "Upgrade or downgrade of project dependencies."
 
 - name: "in-progress"
   color: fbca04
