@@ -21,7 +21,7 @@ if bashio::supervisor.ping; then
         bashio::log.green ' You are running the latest version of this add-on.'
     fi
 
-    bashio::log.blue " System: $(bashio::host.operating_system)" \
+    bashio::log.blue " System: $(bashio::info.operating_system)" \
         " ($(bashio::info.arch) / $(bashio::info.machine))"
     bashio::log.blue " Home Assistant Core: $(bashio::info.homeassistant)"
     bashio::log.blue " Home Assistant Supervisor: $(bashio::info.supervisor)"
