@@ -119,6 +119,7 @@ jobs:
         uses: docker/build-push-action@v2.2.2
         with:
           push: true
+          # yamllint disable-line rule:line-length
           tags: |
             ghcr.io/hassio-addons/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.environment }}
             ghcr.io/hassio-addons/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.version }}
