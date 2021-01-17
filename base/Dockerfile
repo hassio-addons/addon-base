@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.12.1
+ARG BUILD_FROM=alpine:3.13.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -27,17 +27,17 @@ RUN \
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        tar=1.32-r1 \
+        tar=1.33-r1 \
     \
     && apk add --no-cache \
-        libcrypto1.1=1.1.1g-r0 \
-        libssl1.1=1.1.1g-r0 \
-        musl-utils=1.1.24-r10 \
-        musl=1.1.24-r10 \
+        libcrypto1.1=1.1.1i-r0 \
+        libssl1.1=1.1.1i-r0 \
+        musl-utils=1.2.2-r0 \
+        musl=1.2.2-r0 \
     \
     && apk add --no-cache \
-        bash=5.0.17-r0 \
-        curl=7.69.1-r3 \
+        bash=5.1.0-r0 \
+        curl=7.74.0-r0 \
         jq=1.6-r1 \
         tzdata=2020f-r0 \
     \
