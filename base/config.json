@@ -4,9 +4,5 @@
   "slug": "base",
   "description": "Docker base images used by Home Assistant Community Add-ons.",
   "url": "https://github.com/hassio-addons/addon-base",
-  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
-  "options": {},
-  "schema": {},
-  "boot": "auto",
-  "startup": "application"
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"]
 }
