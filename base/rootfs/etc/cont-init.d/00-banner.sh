@@ -12,7 +12,7 @@ if bashio::supervisor.ping; then
         '-----------------------------------------------------------'
 
     bashio::log.blue " Add-on version: $(bashio::addon.version)"
-    if bashio::addon.update_available; then
+    if bashio::var.true "$(bashio::addon.update_available)"; then
         bashio::log.magenta ' There is an update available for this add-on!'
         bashio::log.magenta \
             " Latest add-on version: $(bashio::addon.version_latest)"
