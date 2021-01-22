@@ -35,6 +35,7 @@ repository contain some extras:
 - Adds `jq` & `curl`, since every add-on uses them.
 - Adds Docker [Label Schema][label-schema] support.
 - Includes a helper library: [Bashio][bashio]
+- Includes template helper: [tempio][tempio]
 - Handles logs, add-on startup banners and update notifications.
 - Several small adjustments and improvements.
 
@@ -146,3 +147,4 @@ SOFTWARE.
 [repository]: https://github.com/hassio-addons/repository
 [s6]: http://skarnet.org/software/s6/overview.html
 [semver]: http://semver.org/spec/v2.0.0.html
+[tempio]: https://github.com/home-assistant/tempio
