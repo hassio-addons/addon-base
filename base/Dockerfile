@@ -41,7 +41,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
     \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v2.1.0.2/s6-overlay-${S6_ARCH}.tar.gz" \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.3/s6-overlay-${S6_ARCH}.tar.gz" \
         | tar zxvf - -C / \
     \
     && mkdir -p /etc/fix-attrs.d \
