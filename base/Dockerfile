@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.13.3
+ARG BUILD_FROM=alpine:3.13.4
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -23,7 +23,7 @@ RUN \
     set -o pipefail \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        tar=1.33-r1 \
+        tar=1.34-r0 \
     \
     && apk add --no-cache \
         libcrypto1.1=1.1.1k-r0 \
