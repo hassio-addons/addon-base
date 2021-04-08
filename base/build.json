@@ -1,9 +1,9 @@
 {
   "build_from": {
-    "aarch64": "arm64v8/alpine:3.13.3",
-    "amd64": "amd64/alpine:3.13.3",
-    "armhf": "arm32v6/alpine:3.13.3",
-    "armv7": "arm32v7/alpine:3.13.3",
-    "i386": "i386/alpine:3.13.3"
+    "aarch64": "arm64v8/alpine:3.13.4",
+    "amd64": "amd64/alpine:3.13.4",
+    "armhf": "arm32v6/alpine:3.13.4",
+    "armv7": "arm32v7/alpine:3.13.4",
+    "i386": "i386/alpine:3.13.4"
   }
 }
