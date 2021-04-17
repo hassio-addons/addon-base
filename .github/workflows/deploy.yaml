@@ -62,6 +62,10 @@ jobs:
       matrix:
         architecture: ${{ fromJson(needs.information.outputs.architectures) }}
     steps:
+      - name: 🔂 Wait for other runs to complete
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2.3.4
       - name: 🏗 Set up build cache
@@ -69,7 +73,9 @@ jobs:
         uses: actions/cache@v2.1.5
         with:
           path: /tmp/.docker-cache
-          key: docker-${{ github.ref }}-${{ matrix.architecture }}-${{ github.sha }}
+          key:
+            docker-${{ github.ref }}-${{ matrix.architecture }}-${{ github.sha
+            }}
           restore-keys: |
             docker-${{ github.ref }}-${{ matrix.architecture }}
       - name: 🏗 Set up QEMU
@@ -81,13 +87,16 @@ jobs:
             "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-aarch64-static.tar.gz" | \
             tar zxvf - -C "${{ needs.information.outputs.target }}/rootfs/usr/bin/"
       - name: 🏗 Set up QEMU User Static for armhf/armv7
-        if: ${{ matrix.architecture == 'armhf' || matrix.architecture == 'armv7' }}
+        if: ${{ matrix.architecture == 'armhf' || matrix.architecture == 'armv7'
+          }}
         run: |
           curl -L -s \
             "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-arm-static.tar.gz" | \
             tar zxvf - -C "${{ needs.information.outputs.target }}/rootfs/usr/bin/"
       - name: 🏗 Set up Docker Buildx
         uses: docker/setup-buildx-action@v1.1.2
+      - name: 🏗 Set up CodeNotary
+        run: bash <(curl https://getvcn.codenotary.com -L)
       - name: ℹ️ Compose build flags
         id: flags
         run: |
@@ -113,8 +122,8 @@ jobs:
         uses: docker/login-action@v1.8.0
         with:
           registry: ghcr.io
-          username: ${{ secrets.GHCR_USERNAME }}
-          password: ${{ secrets.GHCR_PASSWORD }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: 🚀 Build and push
         uses: docker/build-push-action@v2.4.0
         with:
@@ -138,3 +147,23 @@ jobs:
             BUILD_REF=${{ github.sha }}
             BUILD_REPOSITORY=${{ github.repository }}
             BUILD_VERSION=${{ needs.information.outputs.version }}
+      - name: 🔏 Notarize
+        # yamllint disable rule:line-length
+        run: |
+          if vcn authenticate \
+            --output json \
+            "docker://ghcr.io/hassio-addons/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.version }}" \
+            | jq \
+              --exit-status \
+              '.verification.status != 0';
+          then
+            vcn login
+            vcn notarize \
+              --public \
+              "docker://ghcr.io/hassio-addons/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.version }}"
+          fi
+        env:
+          VCN_USER: ${{ secrets.VCN_USER }}
+          VCN_PASSWORD: ${{ secrets.VCN_PASSWORD }}
+          VCN_NOTARIZATION_PASSWORD: ${{ secrets.VCN_NOTARIZATION_PASSWORD }}
+          VCN_OTP_EMPTY: true
