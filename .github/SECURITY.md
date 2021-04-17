@@ -62,9 +62,9 @@ Oh, and if we ever meet, I'm happy to buy you a beer :)
 
 Please contact me, Franck Nijhof, directly on:
 
-security@frenck.dev  (not for support!)
+security@frenck.dev (not for support!)
 
-GPG Fingerprint: `731C 60D6 80E6 E850 F31C  2E88 AB33 ADAC E710 1952`
+GPG Fingerprint: `731C 60D6 80E6 E850 F31C 2E88 AB33 ADAC E710 1952`
 
 https://keys.openpgp.org/search?q=731C60D680E6E850F31C2E88AB33ADACE7101952
 
@@ -1837,7 +1837,3 @@ ebj4joK8GrVwV3oQvb0oWg==
 =dRLN
 -----END PGP PUBLIC KEY BLOCK-----
 ```
-
-
-
-
