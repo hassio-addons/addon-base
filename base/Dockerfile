@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.13.4
+ARG BUILD_FROM=alpine:3.13.5
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -33,7 +33,7 @@ RUN \
     \
     && apk add --no-cache \
         bash=5.1.0-r0 \
-        curl=7.74.0-r1 \
+        curl=7.76.1-r0 \
         jq=1.6-r1 \
         tzdata=2021a-r0 \
     \
