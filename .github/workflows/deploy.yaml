@@ -124,10 +124,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: 🚀 Build and push
+      - name: 🚀 Build
         uses: docker/build-push-action@v2.4.0
         with:
-          push: true
           load: true
           # yamllint disable rule:line-length
           tags: |
@@ -168,3 +167,10 @@ jobs:
           VCN_PASSWORD: ${{ secrets.VCN_PASSWORD }}
           VCN_NOTARIZATION_PASSWORD: ${{ secrets.VCN_NOTARIZATION_PASSWORD }}
           VCN_OTP_EMPTY: true
+      - name: 🚀 Push
+        # yamllint disable rule:line-length
+        run: |
+          docker push \
+            "ghcr.io/hassio-addons/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.environment }}"
+          docker push \
+            "docker://ghcr.io/hassio-addons/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.version }}"
