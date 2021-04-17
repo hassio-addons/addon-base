@@ -148,6 +148,7 @@ jobs:
             BUILD_REPOSITORY=${{ github.repository }}
             BUILD_VERSION=${{ needs.information.outputs.version }}
       - name: 🔏 Notarize
+        # yamllint disable rule:line-length
         run: |
           if vcn authenticate \
             --output json \
