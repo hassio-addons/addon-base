@@ -134,7 +134,7 @@ jobs:
           restore-keys: |
             docker-${{ github.ref }}-${{ matrix.architecture }}
       - name: 🏗 Set up QEMU
-        uses: docker/setup-qemu-action@v1.0.2
+        uses: docker/setup-qemu-action@v1.1.0
       - name: 🏗 Set up QEMU User Static for aarch64
         if: ${{ matrix.architecture == 'aarch64' }}
         run: |
