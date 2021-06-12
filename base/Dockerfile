@@ -28,8 +28,8 @@ RUN \
     && apk add --no-cache \
         libcrypto1.1=1.1.1k-r0 \
         libssl1.1=1.1.1k-r0 \
-        musl-utils=1.2.2-r0 \
-        musl=1.2.2-r0 \
+        musl-utils=1.2.2-r1 \
+        musl=1.2.2-r1 \
     \
     && apk add --no-cache \
         bash=5.1.0-r0 \
