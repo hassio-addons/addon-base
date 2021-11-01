@@ -58,7 +58,7 @@ RUN \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     \
     && curl -L -s -o /usr/bin/tempio \
-        "https://github.com/home-assistant/tempio/releases/download/2021.05.0/tempio_${BUILD_ARCH}" \
+        "https://github.com/home-assistant/tempio/releases/download/2021.10.0/tempio_${BUILD_ARCH}" \
     && chmod a+x /usr/bin/tempio \
     \
     && apk del --no-cache --purge .build-dependencies \
