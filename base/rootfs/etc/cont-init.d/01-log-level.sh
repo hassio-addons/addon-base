@@ -9,7 +9,8 @@ declare log_level
 if bashio::config.exists log_level; then
 
     # Find the matching LOG_LEVEL
-    case "$(bashio::string.lower "$(bashio::config log_level)")" in
+    log_level=$(bashio::string.lower "$(bashio::config log_level)") 
+    case "${log_level}" in
         all)
             log_level="${__BASHIO_LOG_LEVEL_ALL}"
             ;;
