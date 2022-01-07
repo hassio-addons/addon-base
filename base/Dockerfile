@@ -26,8 +26,8 @@ RUN \
         tar=1.34-r0 \
     \
     && apk add --no-cache \
-        libcrypto1.1=1.1.1l-r7 \
-        libssl1.1=1.1.1l-r7 \
+        libcrypto1.1=1.1.1l-r8 \
+        libssl1.1=1.1.1l-r8 \
         musl-utils=1.2.2-r7 \
         musl=1.2.2-r7 \
     \
