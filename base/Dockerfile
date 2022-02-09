@@ -24,6 +24,7 @@ RUN \
     \
     && apk add --no-cache --virtual .build-dependencies \
         tar=1.34-r0 \
+        xz=5.2.5-r0 \
     \
     && apk add --no-cache \
         libcrypto1.1=1.1.1o-r0 \
@@ -37,12 +38,23 @@ RUN \
         jq=1.6-r1 \
         tzdata=2022a-r0 \
     \
+    && S6_VERSION="3.0.0.2" \
     && S6_ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="x86"; fi \
+    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; fi \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
     \
-    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.3/s6-overlay-${S6_ARCH}.tar.gz" \
-        | tar zxvf - -C / \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_VERSION}/s6-overlay-noarch-${S6_VERSION}.tar.xz" \
+        | tar -C / -Jxpf - \
+    \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_VERSION}/s6-overlay-${S6_ARCH}-${S6_VERSION}.tar.xz" \
+        | tar -C / -Jxpf - \
+    \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_VERSION}/s6-overlay-symlinks-noarch-${S6_VERSION}.tar.xz" \
+        | tar -C / -Jxpf - \
+    \
+    && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_VERSION}/s6-overlay-symlinks-arch-${S6_VERSION}.tar.xz" \
+        | tar -C / -Jxpf - \
     \
     && mkdir -p /etc/fix-attrs.d \
     && mkdir -p /etc/services.d \
