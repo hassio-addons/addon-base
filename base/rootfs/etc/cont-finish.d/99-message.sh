@@ -3,7 +3,16 @@
 # Home Assistant Community Add-on: Base Images
 # Displays an message right before terminating in case something went wrong
 # ==============================================================================
-if [[ "${S6_STAGE2_EXITED}" -ne 0 ]]; then
+
+# Capture exit code of the container
+# See: https://github.com/just-containers/s6-overlay/issues/406#issuecomment-1034925976
+if [[ -f "/run/s6-linux-init-container-results/exitcode" ]]; then
+    exit_code=$(cat "/run/s6-linux-init-container-results/exitcode")
+else
+    exit_code=0
+fi
+
+if [[ "${exit_code}" -ne 0 ]]; then
     bashio::log.red \
         '-----------------------------------------------------------'
     bashio::log.red '                Oops! Something went wrong.'
