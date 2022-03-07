@@ -32,7 +32,7 @@ RUN \
         musl=1.2.2-r7 \
     \
     && apk add --no-cache \
-        bash=5.1.8-r0 \
+        bash=5.1.16-r0 \
         curl=7.80.0-r0 \
         jq=1.6-r1 \
         tzdata=2021e-r0 \
