@@ -5,3 +5,5 @@ build_from:
   armhf: arm32v6/alpine:3.15.0
   armv7: arm32v7/alpine:3.15.0
   i386: i386/alpine:3.15.0
+codenotary:
+  signer: codenotary@frenck.dev
