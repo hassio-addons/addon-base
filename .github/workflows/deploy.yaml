@@ -15,5 +15,5 @@ on:
 jobs:
   workflows:
     uses: hassio-addons/workflows/.github/workflows/base-deploy.yaml@main
-    with:
+    secrets:
       CAS_API_KEY: ${{ secrets.CAS_API_KEY }}
