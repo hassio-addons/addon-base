@@ -59,7 +59,6 @@ RUN \
     \
     && mkdir -p /etc/fix-attrs.d \
     && mkdir -p /etc/services.d \
-    && echo "${PATH}" > /etc/s6-overlay/config/global_path \
     \
     && curl -J -L -o /tmp/bashio.tar.gz \
         "https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz" \
