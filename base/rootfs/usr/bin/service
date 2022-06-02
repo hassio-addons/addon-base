@@ -2,15 +2,14 @@
 # ==============================================================================
 # Home Assistant Community Add-on: Base Images
 # This script patches all service commands into the appropriate s6- commands
-# Why not systemd? Docker said no, so did we ;)
 # ==============================================================================
 
 start() {
-    s6-svc -wU -u -T2500 "/var/run/s6/services/${service}"
+    s6-svc -wU -u -T2500 "/run/service/${service}"
 }
 
 stop() {
-    s6-svc -wD -d -T2500 "/var/run/s6/services/${service}"
+    s6-svc -wD -d -T2500 "/run/service/${service}"
 }
 
 restart() {
@@ -19,13 +18,13 @@ restart() {
 }
 
 status() {
-    s6-svstat "/var/run/s6/services/${service}"
+    s6-svstat "/run/service/${service}"
 }
 
 service="$1"
 command="$2"
 
-if [[ ! -d "/var/run/s6/services/${service}" ]] ; then
+if [[ ! -d "/run/service/${service}" ]] ; then
     echo "s6 service not found for ${service}, exiting..."
     exit
 fi;
