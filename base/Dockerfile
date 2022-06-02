@@ -25,7 +25,7 @@ RUN \
     \
     && apk add --no-cache --virtual .build-dependencies \
         tar=1.34-r0 \
-        xz=5.2.5-r0 \
+        xz=5.2.5-r1 \
     \
     && apk add --no-cache \
         libcrypto1.1=1.1.1o-r0 \
