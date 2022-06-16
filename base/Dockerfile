@@ -4,13 +4,21 @@ FROM ${BUILD_FROM}
 
 # Environment variables
 ENV \
+    CARGO_NET_GIT_FETCH_WITH_CLI=true \
     HOME="/root" \
     LANG="C.UTF-8" \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_FIND_LINKS=https://wheels.home-assistant.io/musllinux/ \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_PREFER_BINARY=1 \
     PS1="$(whoami)@$(hostname):$(pwd)$ " \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_CMD_WAIT_FOR_SERVICES=1 \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
-    TERM="xterm-256color"
+    S6_CMD_WAIT_FOR_SERVICES=1 \
+    YARN_HTTP_TIMEOUT=1000000 \
+    TERM="xterm-256color" 
 
 # Copy root filesystem
 COPY rootfs /
