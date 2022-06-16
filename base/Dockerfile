@@ -65,9 +65,6 @@ RUN \
     && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_VERSION}/s6-overlay-symlinks-arch.tar.xz" \
         | tar -C / -Jxpf - \
     \
-    && mkdir -p /etc/fix-attrs.d \
-    && mkdir -p /etc/services.d \
-    \
     && curl -J -L -o /tmp/bashio.tar.gz \
         "https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz" \
     && mkdir /tmp/bashio \
