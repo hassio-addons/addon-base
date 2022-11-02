@@ -45,7 +45,7 @@ RUN \
         bash=5.1.16-r2 \
         curl=7.83.1-r4 \
         jq=1.6-r1 \
-        tzdata=2022c-r0 \
+        tzdata=2022f-r0 \
     \
     && S6_VERSION="3.1.2.1" \
     && S6_ARCH="${BUILD_ARCH}" \
