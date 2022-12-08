@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.16.3
+ARG BUILD_FROM=alpine:3.17.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -32,19 +32,19 @@ RUN \
     set -o pipefail \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        tar=1.34-r0 \
-        xz=5.2.5-r1 \
+        tar=1.34-r1 \
+        xz=5.2.9-r0 \
     \
     && apk add --no-cache \
-        libcrypto1.1=1.1.1s-r0 \
-        libssl1.1=1.1.1s-r0 \
-        musl-utils=1.2.3-r2 \
-        musl=1.2.3-r2 \
+        libcrypto3=3.0.7-r0 \
+        libssl3=3.0.7-r0 \
+        musl-utils=1.2.3-r4 \
+        musl=1.2.3-r4 \
     \
     && apk add --no-cache \
-        bash=5.1.16-r2 \
-        curl=7.83.1-r4 \
-        jq=1.6-r1 \
+        bash=5.2.12-r0 \
+        curl=7.86.0-r1 \
+        jq=1.6-r2 \
         tzdata=2022f-r1 \
     \
     && S6_VERSION="3.1.2.1" \
