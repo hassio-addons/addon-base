@@ -1,0 +1,11 @@
+#!/bin/bash
+# ==============================================================================
+# Home Assistant Community Add-on: Base Images
+# Really tiny command, that can be used by other images to remove legacy S6
+# Overlay files. This makes startup for those add-ons a tiny bit cleaner.
+# ==============================================================================
+rm -fr \
+  /package/admin/s6-overlay/etc/s6-rc/sources/base/contents.d/legacy-cont-init \
+  /package/admin/s6-overlay/etc/s6-rc/sources/top/contents.d/legacy-services \
+  /package/admin/s6-overlay/etc/s6-rc/sources/legacy-cont-init \
+  /package/admin/s6-overlay/etc/s6-rc/sources/legacy-services
