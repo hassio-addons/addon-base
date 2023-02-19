@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.17.1
+ARG BUILD_FROM=alpine:3.17.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -34,14 +34,14 @@ RUN \
         xz=5.2.9-r0 \
     \
     && apk add --no-cache \
-        libcrypto3=3.0.7-r2 \
-        libssl3=3.0.7-r2 \
+        libcrypto3=3.0.8-r0 \
+        libssl3=3.0.8-r0 \
         musl-utils=1.2.3-r4 \
         musl=1.2.3-r4 \
     \
     && apk add --no-cache \
         bash=5.2.15-r0 \
-        curl=7.87.0-r1 \
+        curl=7.87.0-r2 \
         jq=1.6-r2 \
         tzdata=2022f-r1 \
     \
