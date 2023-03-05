@@ -30,7 +30,7 @@ RUN \
     set -o pipefail \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        tar=1.34-r1 \
+        tar=1.34-r2 \
         xz=5.2.9-r0 \
     \
     && apk add --no-cache \
@@ -41,7 +41,7 @@ RUN \
     \
     && apk add --no-cache \
         bash=5.2.15-r0 \
-        curl=7.87.0-r2 \
+        curl=7.88.1-r0 \
         jq=1.6-r2 \
         tzdata=2022f-r1 \
     \
