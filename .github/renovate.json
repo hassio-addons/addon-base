@@ -1,0 +1,82 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "schedule": ["before 2am"],
+  "rebaseWhen": "behind-base-branch",
+  "dependencyDashboard": true,
+  "labels": ["dependencies", "no-stale"],
+  "commitMessagePrefix": "⬆️",
+  "regexManagers": [
+    {
+      "fileMatch": ["^Dockerfile$", "^build.yaml$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)",
+        "\\s+[aarch64|amd64|armhf|armv7|i386]:\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": ["ARG BASHIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "hassio-addons/bashio",
+      "versioningTemplate": "semver",
+      "autoReplaceStringTemplate": "ARG BASHIO_VERSION=\"${{newValue}}\""
+    },
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "ARG S6_OVERLAY_VERSION=[\"']?(?<currentValue>.+?)[\"']?"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "just-containers/s6-overlay",
+      "autoReplaceStringTemplate": "ARG S6_OVERLAY_VERSION=\"${{newValue}}\""
+    },
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": ["ARG TEMPIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "home-assistant/tempio",
+      "autoReplaceStringTemplate": "ARG TEMPIO_VERSION=\"${{newValue}}\""
+    },
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "ARG BUILD_FROM=alpine:(?<major>\\d+)\\.(?<minor>\\d+).*",
+        "\\s+(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-.]+)"
+      ],
+      "datasourceTemplate": "repology",
+      "depNameTemplate": "alpine_{{major}}_{{minor}}/{{package}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["github-releases"],
+      "matchDepNames": ["hassio-addons/bashio"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchDepNames": ["just-containers/s6-overlay"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchDatasources": ["repology"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "groupName": "Alpine base image",
+      "matchDatasources": ["docker"]
+    },
+    {
+      "groupName": "Alpine base image",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    }
+  ]
+}
