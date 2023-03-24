@@ -10,14 +10,16 @@
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)",
-        "\\s+[aarch64|amd64|armhf|armv7|i386]:\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?"
+        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
+        "\\s+[aarch64|amd64|armhf|armv7|i386]:\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s+"
       ],
       "datasourceTemplate": "docker"
     },
     {
       "fileMatch": ["/Dockerfile$"],
-      "matchStrings": ["ARG BASHIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?"],
+      "matchStrings": [
+        "ARG BASHIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "hassio-addons/bashio",
       "versioningTemplate": "semver",
@@ -26,7 +28,7 @@
     {
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
-        "ARG S6_OVERLAY_VERSION=[\"']?(?<currentValue>.+?)[\"']?"
+        "ARG S6_OVERLAY_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "just-containers/s6-overlay",
@@ -34,7 +36,9 @@
     },
     {
       "fileMatch": ["/Dockerfile$"],
-      "matchStrings": ["ARG TEMPIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?"],
+      "matchStrings": [
+        "ARG TEMPIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "home-assistant/tempio",
       "autoReplaceStringTemplate": "ARG TEMPIO_VERSION=\"${{newValue}}\""
@@ -44,7 +48,7 @@
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "ARG BUILD_FROM=alpine:(?<major>\\d+)\\.(?<minor>\\d+).*",
-        "\\s+(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-.]+)"
+        "\\s+(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-.]+)\\s+"
       ],
       "datasourceTemplate": "repology",
       "depNameTemplate": "alpine_{{major}}_{{minor}}/{{package}}"
