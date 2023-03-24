@@ -53,7 +53,7 @@
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_{{major}}_{{minor}}/{{package}}"
+      "depNameTemplate": "alpine_3_17/{{package}}"
     }
   ],
   "packageRules": [
