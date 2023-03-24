@@ -7,7 +7,7 @@
   "commitMessagePrefix": "⬆️",
   "regexManagers": [
     {
-      "fileMatch": ["^Dockerfile$", "^build.yaml$"],
+      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)",
@@ -16,7 +16,7 @@
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": ["/Dockerfile$"],
       "matchStrings": ["ARG BASHIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "hassio-addons/bashio",
@@ -24,7 +24,7 @@
       "autoReplaceStringTemplate": "ARG BASHIO_VERSION=\"${{newValue}}\""
     },
     {
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG S6_OVERLAY_VERSION=[\"']?(?<currentValue>.+?)[\"']?"
       ],
@@ -33,14 +33,14 @@
       "autoReplaceStringTemplate": "ARG S6_OVERLAY_VERSION=\"${{newValue}}\""
     },
     {
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": ["/Dockerfile$"],
       "matchStrings": ["ARG TEMPIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "home-assistant/tempio",
       "autoReplaceStringTemplate": "ARG TEMPIO_VERSION=\"${{newValue}}\""
     },
     {
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "ARG BUILD_FROM=alpine:(?<major>\\d+)\\.(?<minor>\\d+).*",
