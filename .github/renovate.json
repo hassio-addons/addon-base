@@ -22,8 +22,7 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "hassio-addons/bashio",
-      "versioningTemplate": "semver",
-      "autoReplaceStringTemplate": "ARG BASHIO_VERSION=\"${{newValue}}\""
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["/Dockerfile$"],
@@ -32,8 +31,7 @@
       ],
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "loose",
-      "depNameTemplate": "just-containers/s6-overlay",
-      "autoReplaceStringTemplate": "ARG S6_OVERLAY_VERSION=\"${{newValue}}\""
+      "depNameTemplate": "just-containers/s6-overlay"
     },
     {
       "fileMatch": ["/Dockerfile$"],
@@ -42,8 +40,7 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "home-assistant/tempio",
-      "versioningTemplate": "loose",
-      "autoReplaceStringTemplate": "ARG TEMPIO_VERSION=\"${{newValue}}\""
+      "versioningTemplate": "loose"
     },
     {
       "fileMatch": ["/Dockerfile$"],
