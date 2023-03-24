@@ -46,7 +46,7 @@
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-.]+)\\s+"
+        "\\s\\s(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
