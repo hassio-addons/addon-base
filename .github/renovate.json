@@ -47,7 +47,7 @@
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "\\s\\s(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
+        "\\s\\s(?<package>[a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
@@ -63,6 +63,12 @@
     },
     {
       "matchDatasources": ["repology"],
+      "automerge": true
+    },
+    {
+      "groupName": "OpenSSL",
+      "matchDatasources": ["repology"],
+      "matchPackagePatterns": ["^alpine_.*/(libssl|libcrypto).*$"],
       "automerge": true
     },
     {
