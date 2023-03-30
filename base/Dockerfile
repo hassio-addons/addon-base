@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.17.2
+ARG BUILD_FROM=alpine:3.17.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
