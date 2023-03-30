@@ -32,7 +32,8 @@
       ],
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "loose",
-      "depNameTemplate": "just-containers/s6-overlay"
+      "depNameTemplate": "just-containers/s6-overlay",
+      "extractVersion": "^v(?<version>.*)$"
     },
     {
       "fileMatch": ["/Dockerfile$"],

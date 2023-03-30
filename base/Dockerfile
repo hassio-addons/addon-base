@@ -26,7 +26,7 @@ SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 # Install base system
 ARG BUILD_ARCH=amd64
 ARG BASHIO_VERSION="v0.14.3"
-ARG S6_OVERLAY_VERSION="v3.1.4.1"
+ARG S6_OVERLAY_VERSION="3.1.4.1"
 ARG TEMPIO_VERSION="2021.09.0"
 RUN \
     set -o pipefail \
@@ -86,7 +86,7 @@ RUN \
 COPY rootfs /
 
 # Copy s6-overlay adjustments
-COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION#v}/
+COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
 
 # Entrypoint & CMD
 ENTRYPOINT ["/init"]
