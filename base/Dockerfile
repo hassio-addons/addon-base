@@ -86,7 +86,7 @@ RUN \
 COPY rootfs /
 
 # Copy s6-overlay adjustments
-COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
+COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION#v}/
 
 # Entrypoint & CMD
 ENTRYPOINT ["/init"]
