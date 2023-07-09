@@ -44,6 +44,6 @@ if bashio::config.exists log_level; then
     esac
 
     # Save determined log level so S6 can pick it up later
-    echo "${log_level}" > /var/run/s6/container_environment/LOG_LEVEL
+    echo -n "${log_level}" > /var/run/s6/container_environment/LOG_LEVEL
     bashio::log.blue "Log level is set to ${__BASHIO_LOG_LEVELS[$log_level]}"
 fi
