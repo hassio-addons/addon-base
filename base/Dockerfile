@@ -8,7 +8,7 @@ ENV \
     HOME="/root" \
     LANG="C.UTF-8" \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
-    PIP_FIND_LINKS=https://wheels.home-assistant.io/musllinux/ \
+    PIP_EXTRA_INDEX_URL="https://wheels.home-assistant.io/musllinux-index/" \
     PIP_NO_CACHE_DIR=1 \
     PIP_PREFER_BINARY=1 \
     PS1="$(whoami)@$(hostname):$(pwd)$ " \
