@@ -26,7 +26,7 @@ SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 # Install base system
 ARG BUILD_ARCH=amd64
 ARG BASHIO_VERSION="v0.16.0"
-ARG S6_OVERLAY_VERSION="3.1.5.0"
+ARG S6_OVERLAY_VERSION="3.1.6.0"
 ARG TEMPIO_VERSION="2021.09.0"
 RUN \
     set -o pipefail \
