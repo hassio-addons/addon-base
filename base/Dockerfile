@@ -7,6 +7,7 @@ ENV \
     CARGO_NET_GIT_FETCH_WITH_CLI=true \
     HOME="/root" \
     LANG="C.UTF-8" \
+    PIP_BREAK_SYSTEM_PACKAGES=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_EXTRA_INDEX_URL="https://wheels.home-assistant.io/musllinux-index/" \
     PIP_NO_CACHE_DIR=1 \
