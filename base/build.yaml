@@ -1,9 +1,9 @@
 ---
 build_from:
-  aarch64: arm64v8/alpine:3.19.1
-  amd64: amd64/alpine:3.19.1
-  armhf: arm32v6/alpine:3.19.1
-  armv7: arm32v7/alpine:3.19.1
-  i386: i386/alpine:3.19.1
+  aarch64: arm64v8/alpine:3.20.0
+  amd64: amd64/alpine:3.20.0
+  armhf: arm32v6/alpine:3.20.0
+  armv7: arm32v7/alpine:3.20.0
+  i386: i386/alpine:3.20.0
 codenotary:
   signer: codenotary@frenck.dev
