@@ -34,19 +34,19 @@ RUN \
     \
     && apk add --no-cache --virtual .build-dependencies \
         tar=1.35-r2 \
-        xz=5.4.5-r0 \
+        xz=5.6.1-r3 \
     \
     && apk add --no-cache \
-        libcrypto3=3.1.5-r0 \
-        libssl3=3.1.5-r0 \
-        musl-utils=1.2.4_git20230717-r4 \
-        musl=1.2.4_git20230717-r4 \
+        libcrypto3=3.3.0-r2 \
+        libssl3=3.3.0-r2 \
+        musl-utils=1.2.5-r0 \
+        musl=1.2.5-r0 \
     \
     && apk add --no-cache \
-        bash=5.2.21-r0 \
-        curl=8.5.0-r0 \
+        bash=5.2.26-r0 \
+        curl=8.7.1-r0 \
         jq=1.7.1-r0 \
-        tzdata=2024a-r0 \
+        tzdata=2024a-r1 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
