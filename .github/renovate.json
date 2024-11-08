@@ -6,8 +6,9 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -17,6 +18,7 @@
       "datasourceTemplate": "docker"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG BASHIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
@@ -26,6 +28,7 @@
       "versioningTemplate": "semver"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG S6_OVERLAY_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
@@ -36,6 +39,7 @@
       "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG TEMPIO_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
@@ -45,6 +49,7 @@
       "versioningTemplate": "loose"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -69,8 +74,8 @@
     {
       "groupName": "OpenSSL",
       "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/(libssl|libcrypto).*$"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^alpine_.*/(libssl|libcrypto).*$/"]
     },
     {
       "groupName": "Alpine base image",
