@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.20.3
+ARG BUILD_FROM=alpine:3.21.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -34,19 +34,19 @@ RUN \
     \
     && apk add --no-cache --virtual .build-dependencies \
         tar=1.35-r2 \
-        xz=5.6.2-r0 \
+        xz=5.6.3-r0 \
     \
     && apk add --no-cache \
-        libcrypto3=3.3.2-r1 \
-        libssl3=3.3.2-r1 \
-        musl-utils=1.2.5-r0 \
-        musl=1.2.5-r0 \
+        libcrypto3=3.3.2-r4 \
+        libssl3=3.3.2-r4 \
+        musl-utils=1.2.5-r8 \
+        musl=1.2.5-r8 \
     \
     && apk add --no-cache \
-        bash=5.2.26-r0 \
+        bash=5.2.37-r0 \
         curl=8.11.0-r2 \
         jq=1.7.1-r0 \
-        tzdata=2024b-r0 \
+        tzdata=2024b-r1 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
