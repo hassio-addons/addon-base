@@ -33,19 +33,19 @@ RUN \
     set -o pipefail \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        tar=1.35-r2 \
-        xz=5.6.3-r1 \
+        tar=1.35-r3 \
+        xz=5.8.1-r0 \
     \
     && apk add --no-cache \
-        libcrypto3=3.3.3-r0 \
-        libssl3=3.3.3-r0 \
-        musl-utils=1.2.5-r9 \
-        musl=1.2.5-r9 \
+        libcrypto3=3.5.0-r0 \
+        libssl3=3.5.0-r0 \
+        musl-utils=1.2.5-r10 \
+        musl=1.2.5-r10 \
     \
     && apk add --no-cache \
         bash=5.2.37-r0 \
-        curl=8.12.1-r1 \
-        jq=1.7.1-r0 \
+        curl=8.14.1-r0 \
+        jq=1.8.0-r0 \
         tzdata=2025b-r0 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
