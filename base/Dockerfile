@@ -19,14 +19,14 @@ ENV \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
     S6_CMD_WAIT_FOR_SERVICES=1 \
     YARN_HTTP_TIMEOUT=1000000 \
-    TERM="xterm-256color" 
+    TERM="xterm-256color"
 
 # Set shell
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Install base system
 ARG BUILD_ARCH=amd64
-ARG BASHIO_VERSION="v0.17.3"
+ARG BASHIO_VERSION="v0.17.4"
 ARG S6_OVERLAY_VERSION="3.2.1.0"
 ARG TEMPIO_VERSION="2024.11.2"
 RUN \
