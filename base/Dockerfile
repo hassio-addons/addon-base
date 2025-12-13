@@ -46,7 +46,7 @@ RUN \
         bash=5.2.37-r0 \
         curl=8.14.1-r2 \
         jq=1.8.1-r0 \
-        tzdata=2025b-r0 \
+        tzdata=2025c-r0 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; fi \
