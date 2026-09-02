@@ -45,7 +45,7 @@ RUN \
     && apk add --no-cache \
         bash=5.3.9-r1 \
         curl=8.21.0-r0 \
-        jq=1.8.1-r0 \
+        jq=1.8.2-r0 \
         tzdata=2026c-r0 \
     \
     && S6_ARCH="${BUILD_ARCH}" \
